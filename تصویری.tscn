@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1poxmn22l162"]
+
+[ext_resource type="FontFile" uid="uid://m7jnorfu8m8q" path="res://fonts/29ltarapix.otf" id="1_wp0s7"]
+[ext_resource type="Script" uid="uid://dy17esy4x1f03" path="res://تصویری.gd" id="2_fcapu"]
+
+[sub_resource type="Theme" id="Theme_i0y2b"]
+default_font = ExtResource("1_wp0s7")
+default_font_size = 80
+
+[node name="تصویری" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_i0y2b")
+script = ExtResource("2_fcapu")
+
+[node name="سر" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="امتیاز" type="Label" parent="سر"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ایستاننده" type="Button" parent="سر"]
+layout_mode = 2
+disabled = true
+text = "  | |  "
+
+[node name="ایستاده" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="امتیاز" type="Label" parent="ایستاده"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="برگردان" type="Button" parent="ایستاده"]
+layout_mode = 2
+text = "برگرد"
+
+[node name="تن" type="Container" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="شمارشگر" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[node name="شمارشگرآغاز" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+
+[connection signal="pressed" from="ایستاده/برگردان" to="." method="_on_back_pressed"]
+[connection signal="timeout" from="شمارشگر" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="شمارشگرآغاز" to="." method="_on_countdown_timer_timeout"]
