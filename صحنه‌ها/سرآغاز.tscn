@@ -1,0 +1,395 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdmrrn0dwuxem"]
+
+[ext_resource type="Theme" uid="uid://ckmf8v6was3nc" path="res://تم.tres" id="1_4ng2d"]
+[ext_resource type="Script" uid="uid://d0eikci7qr40g" path="res://فردادان/سرآغاز.gd" id="2_q8cep"]
+
+[node name="سرآغاز" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_4ng2d")
+script = ExtResource("2_q8cep")
+
+[node name="نگهدارنده" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+draw_focus_border = true
+vertical_scroll_mode = 2
+
+[node name="بخش‌ها" type="VBoxContainer" parent="نگهدارنده"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="برجسب توجه" type="Label" parent="نگهدارنده/بخش‌ها"]
+layout_mode = 2
+text = "توجه"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="توجه" type="HBoxContainer" parent="نگهدارنده/بخش‌ها"]
+layout_mode = 2
+alignment = 2
+
+[node name="قهوه" type="Button" parent="نگهدارنده/بخش‌ها/توجه"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "قهوه"
+
+[node name="قطار" type="Button" parent="نگهدارنده/بخش‌ها/توجه"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "قطار"
+
+[node name="فرق" type="Button" parent="نگهدارنده/بخش‌ها/توجه"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "فرق"
+
+[node name="آسمان خراش" type="Button" parent="نگهدارنده/بخش‌ها/توجه"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "آسمان
+خراش"
+
+[node name="ماهی" type="Button" parent="نگهدارنده/بخش‌ها/توجه"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "ماهی"
+
+[node name="مهاجر" type="Button" parent="نگهدارنده/بخش‌ها/توجه"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "مهاجر"
+
+[node name="موریار" type="Button" parent="نگهدارنده/بخش‌ها/توجه"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "موریار"
+
+[node name="دوپس دوپس" type="Button" parent="نگهدارنده/بخش‌ها/توجه"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "دوپس
+دوپس"
+
+[node name="برجسب حافظه" type="Label" parent="نگهدارنده/بخش‌ها"]
+layout_mode = 2
+text = "حافظه"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="حافظه" type="HBoxContainer" parent="نگهدارنده/بخش‌ها"]
+layout_mode = 2
+
+[node name="کنار ساحل" type="Button" parent="نگهدارنده/بخش‌ها/حافظه"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "کنار
+ساحل"
+
+[node name="توپ" type="Button" parent="نگهدارنده/بخش‌ها/حافظه"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "توپ"
+
+[node name="هتل" type="Button" parent="نگهدارنده/بخش‌ها/حافظه"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "هتل"
+
+[node name="تصویری" type="Button" parent="نگهدارنده/بخش‌ها/حافظه"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "تصویری "
+
+[node name="MemoryMatchOverdrive" type="Button" parent="نگهدارنده/بخش‌ها/حافظه"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "🚧"
+
+[node name="MemoryMatch" type="Button" parent="نگهدارنده/بخش‌ها/حافظه"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "🚧"
+
+[node name="برچسب انعطاف‌پذیری" type="Label" parent="نگهدارنده/بخش‌ها"]
+layout_mode = 2
+text = "انعطاف‌پذیری"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="انعطاف‌پذیری" type="HBoxContainer" parent="نگهدارنده/بخش‌ها"]
+layout_mode = 2
+
+[node name="صورت فلکی" type="Button" parent="نگهدارنده/بخش‌ها/انعطاف‌پذیری"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "صورت
+فلکی"
+
+[node name="رود برگ" type="Button" parent="نگهدارنده/بخش‌ها/انعطاف‌پذیری"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "رود
+برگ"
+
+[node name="افقی عمودی" type="Button" parent="نگهدارنده/بخش‌ها/انعطاف‌پذیری"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "افقی
+عمودی"
+
+[node name="رنگومتن" type="Button" parent="نگهدارنده/بخش‌ها/انعطاف‌پذیری"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "رنگ و
+متن"
+
+[node name="BrainShiftOverdrive" type="Button" parent="نگهدارنده/بخش‌ها/انعطاف‌پذیری"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "🚧"
+
+[node name="زوجواکه" type="Button" parent="نگهدارنده/بخش‌ها/انعطاف‌پذیری"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "زوجواکه"
+
+[node name="برچسب حل مسئله" type="Label" parent="نگهدارنده/بخش‌ها"]
+layout_mode = 2
+text = "حل مسئله"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="حل مسئله" type="HBoxContainer" parent="نگهدارنده/بخش‌ها"]
+layout_mode = 2
+
+[node name="دزد دریایی" type="Button" parent="نگهدارنده/بخش‌ها/حل مسئله"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "دزد دریایی"
+
+[node name="کارآگاه" type="Button" parent="نگهدارنده/بخش‌ها/حل مسئله"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "کارآگاه"
+
+[node name="باغ" type="Button" parent="نگهدارنده/بخش‌ها/حل مسئله"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "باغ"
+
+[node name="پازل" type="Button" parent="نگهدارنده/بخش‌ها/حل مسئله"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "پازل"
+
+[node name="فازنول" type="Button" parent="نگهدارنده/بخش‌ها/حل مسئله"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "فاز
+نول"
+
+[node name="برچسب سرعت" type="Label" parent="نگهدارنده/بخش‌ها"]
+layout_mode = 2
+text = "سرعت"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="سرعت" type="HBoxContainer" parent="نگهدارنده/بخش‌ها"]
+layout_mode = 2
+
+[node name="تقسیم دانه" type="Button" parent="نگهدارنده/بخش‌ها/سرعت"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "تقسیم
+دانه"
+
+[node name="چمدان" type="Button" parent="نگهدارنده/بخش‌ها/سرعت"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "چمدان"
+
+[node name="اشکال دیوانه" type="Button" parent="نگهدارنده/بخش‌ها/سرعت"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "اشکال
+دیوانه"
+
+[node name="اشکال" type="Button" parent="نگهدارنده/بخش‌ها/سرعت"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "اشکال"
+
+[node name="اشکال فضایی" type="Button" parent="نگهدارنده/بخش‌ها/سرعت"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "اشکال
+فضایی"
+
+[node name="رود" type="Button" parent="نگهدارنده/بخش‌ها/سرعت"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "رود"
+
+[node name="پنگوئن" type="Button" parent="نگهدارنده/بخش‌ها/سرعت"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "پنگوئن"
+
+[node name="خیابان" type="Button" parent="نگهدارنده/بخش‌ها/سرعت"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "خیابان"
+
+[node name="برجسب ریاضی" type="Label" parent="نگهدارنده/بخش‌ها"]
+layout_mode = 2
+text = "ریاضی"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ریاضی" type="HBoxContainer" parent="نگهدارنده/بخش‌ها"]
+layout_mode = 2
+
+[node name="قمار" type="Button" parent="نگهدارنده/بخش‌ها/ریاضی"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "قمار"
+
+[node name="باران" type="Button" parent="نگهدارنده/بخش‌ها/ریاضی"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "باران"
+
+[node name="شعبده" type="Button" parent="نگهدارنده/بخش‌ها/ریاضی"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "شعبده"
+
+[node name="آشپزباشی" type="Button" parent="نگهدارنده/بخش‌ها/ریاضی"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "آشپزباشی"
+
+[node name="بیشتر" type="Button" parent="نگهدارنده/بخش‌ها/ریاضی"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "بیشتر"
+
+[node name="برجسب زبان" type="Label" parent="نگهدارنده/بخش‌ها"]
+layout_mode = 2
+text = "زبان"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="زبان" type="HBoxContainer" parent="نگهدارنده/بخش‌ها"]
+layout_mode = 2
+
+[node name="WordSnatchers" type="Button" parent="نگهدارنده/بخش‌ها/زبان"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "‍🚧🚧"
+
+[node name="WordBubble" type="Button" parent="نگهدارنده/بخش‌ها/زبان"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "🚧"
+
+[node name="TakingRoot" type="Button" parent="نگهدارنده/بخش‌ها/زبان"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "🚧"
+
+[node name="EditorChoice" type="Button" parent="نگهدارنده/بخش‌ها/زبان"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "🚧"
+
+[node name="Continuum" type="Button" parent="نگهدارنده/بخش‌ها/زبان"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "🚧"
+
+[node name="Contexual" type="Button" parent="نگهدارنده/بخش‌ها/زبان"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "🚧"
+
+[node name="برجسب پیکربندی" type="Label" parent="نگهدارنده/بخش‌ها"]
+layout_mode = 2
+text = "پیکربندی"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="پیکربندی" type="HBoxContainer" parent="نگهدارنده/بخش‌ها"]
+layout_mode = 2
+alignment = 2
+
+[node name="زبان" type="Button" parent="نگهدارنده/بخش‌ها/پیکربندی"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "زبان"
+
+[node name="دبیره" type="Button" parent="نگهدارنده/بخش‌ها/پیکربندی"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "دبیره"
+
+[node name="آویس" type="AudioStreamPlayer" parent="."]
+
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/توجه/قهوه" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/توجه/قطار" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/توجه/فرق" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/توجه/آسمان خراش" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/توجه/ماهی" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/توجه/مهاجر" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/توجه/موریار" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/توجه/دوپس دوپس" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/حافظه/کنار ساحل" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/حافظه/توپ" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/حافظه/هتل" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/حافظه/تصویری" to="." method="آغازبازی" binds= ["res://صحنه‌ها/تصویری.tscn"]]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/حافظه/MemoryMatchOverdrive" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/حافظه/MemoryMatch" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/انعطاف‌پذیری/صورت فلکی" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/انعطاف‌پذیری/رود برگ" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/انعطاف‌پذیری/افقی عمودی" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/انعطاف‌پذیری/رنگومتن" to="." method="آغازبازی" binds= ["res://صحنه‌ها/رنگومتن.tscn"]]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/انعطاف‌پذیری/BrainShiftOverdrive" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/انعطاف‌پذیری/زوجواکه" to="." method="آغازبازی" binds= ["res://صحنه‌ها/زوجواکه.tscn"]]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/حل مسئله/دزد دریایی" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/حل مسئله/کارآگاه" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/حل مسئله/باغ" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/حل مسئله/پازل" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/حل مسئله/فازنول" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/سرعت/تقسیم دانه" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/سرعت/چمدان" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/سرعت/اشکال دیوانه" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/سرعت/اشکال" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/سرعت/اشکال فضایی" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/سرعت/رود" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/سرعت/پنگوئن" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/سرعت/خیابان" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/ریاضی/قمار" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/ریاضی/باران" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/ریاضی/شعبده" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/ریاضی/آشپزباشی" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/ریاضی/بیشتر" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/زبان/WordSnatchers" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/زبان/WordBubble" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/زبان/TakingRoot" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/زبان/EditorChoice" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/زبان/Continuum" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/زبان/Contexual" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/پیکربندی/زبان" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/پیکربندی/دبیره" to="." method="آغازبازی"]

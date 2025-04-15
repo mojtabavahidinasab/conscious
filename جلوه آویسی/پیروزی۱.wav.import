@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://jmva5iwhx0g8"
+path="res://.godot/imported/پیروزی۱.wav-2926a5401a81cae284f53ebd17c2a14e.sample"
+
+[deps]
+
+source_file="res://جلوه آویسی/پیروزی۱.wav"
+dest_files=["res://.godot/imported/پیروزی۱.wav-2926a5401a81cae284f53ebd17c2a14e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
