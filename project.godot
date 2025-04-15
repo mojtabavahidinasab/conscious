@@ -14,9 +14,10 @@ config/name="conscious"
 config/name_localized={
 "fa": "هوشیار"
 }
-config/version="0.0.0"
+config/version="0.0.1"
 run/main_scene="uid://bdmrrn0dwuxem"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 run/size/mode=3
 
