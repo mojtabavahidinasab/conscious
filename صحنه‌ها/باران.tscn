@@ -1,0 +1,383 @@
+[gd_scene load_steps=29 format=3 uid="uid://jlkupge2q7lw"]
+
+[ext_resource type="Theme" uid="uid://ckmf8v6was3nc" path="res://تم.tres" id="1_5fqva"]
+[ext_resource type="Script" uid="uid://tyl4nxtkjbvb" path="res://فردادان/باران.gd" id="2_agb8n"]
+[ext_resource type="AudioStream" uid="uid://dxemw7754sbf2" path="res://جلوه آویسی/شمارشگرآغاز.wav" id="2_dlfgb"]
+[ext_resource type="PackedScene" uid="uid://68c005swwops" path="res://صحنه‌ها/قطره.tscn" id="3_agb8n"]
+[ext_resource type="Texture2D" uid="uid://qloocjrith3x" path="res://فرتور/ocean01.png" id="6_icgkd"]
+[ext_resource type="Texture2D" uid="uid://bql6hcpna5ild" path="res://فرتور/ocean02.png" id="7_4g4ip"]
+[ext_resource type="Texture2D" uid="uid://cego4aw5ih4s6" path="res://فرتور/ocean03.png" id="8_3dl32"]
+[ext_resource type="Texture2D" uid="uid://4x5m06olpett" path="res://فرتور/ocean04.png" id="9_mnj42"]
+[ext_resource type="Texture2D" uid="uid://b6bsyc2xt18g0" path="res://فرتور/ocean05.png" id="10_dgsgv"]
+[ext_resource type="Texture2D" uid="uid://c7dnb5amxnbu7" path="res://فرتور/ocean06.png" id="11_v40f3"]
+[ext_resource type="Texture2D" uid="uid://le0xmug0c3kv" path="res://فرتور/ocean07.png" id="12_y47hh"]
+[ext_resource type="Texture2D" uid="uid://sauytlf7c7g1" path="res://فرتور/ocean08.png" id="13_3vsik"]
+[ext_resource type="Texture2D" uid="uid://ggfxxbysmji0" path="res://فرتور/ocean09.png" id="14_6mfnk"]
+[ext_resource type="Texture2D" uid="uid://orvwiqtpwt2w" path="res://فرتور/ocean10.png" id="15_x5i7t"]
+[ext_resource type="Texture2D" uid="uid://bnc7ovmoyl6yd" path="res://فرتور/ocean11.png" id="16_2p7qa"]
+[ext_resource type="Texture2D" uid="uid://d3absrumr2sk0" path="res://فرتور/ocean12.png" id="17_3jd85"]
+[ext_resource type="Texture2D" uid="uid://bd1y68q5fmr1" path="res://فرتور/ocean13.png" id="18_kp7ls"]
+[ext_resource type="Texture2D" uid="uid://36qlhfv828aa" path="res://فرتور/ocean14.png" id="19_da714"]
+[ext_resource type="Texture2D" uid="uid://cilx1b6mqmxx2" path="res://فرتور/ocean15.png" id="20_gnghc"]
+[ext_resource type="Texture2D" uid="uid://bcymptjj2l6xw" path="res://فرتور/ocean16.png" id="21_xwoyk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_agb8n"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 666
+corner_radius_top_right = 666
+corner_radius_bottom_right = 666
+corner_radius_bottom_left = 666
+corner_detail = 1
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k2lne"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_icgkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4g4ip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3dl32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mnj42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_dgsgv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_v40f3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_y47hh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_3vsik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_6mfnk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_x5i7t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_2p7qa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_3jd85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_kp7ls")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_da714")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_gnghc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_xwoyk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b056l"]
+size = Vector2(724.73, 161.498)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jfys7"]
+bg_color = Color(0, 0, 0, 0.490196)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r6x4i"]
+bg_color = Color(0, 0, 0, 0.490196)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dlfgb"]
+bg_color = Color(0, 0, 0, 0.490196)
+
+[sub_resource type="Curve2D" id="Curve2D_agb8n"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0.137421, 0.330725, 0, 0, 0, 0, 719.934, 0.175774)
+}
+point_count = 2
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lrref"]
+custom_solver_bias = 1.0
+distance = 83.03
+
+[node name="باران" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_5fqva")
+script = ExtResource("2_agb8n")
+"قطره" = ExtResource("3_agb8n")
+
+[node name="سر" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="امتیاز" type="Label" parent="سر"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ایستاننده" type="Button" parent="سر"]
+layout_mode = 2
+disabled = true
+text = "  | |  "
+
+[node name="ایستاده" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="امتیاز" type="Label" parent="ایستاده"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="برگردان" type="Button" parent="ایستاده"]
+layout_mode = 2
+text = "برگرد"
+
+[node name="شمارش" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.117944
+anchor_top = 0.276938
+anchor_right = 0.851056
+anchor_bottom = 0.694938
+offset_left = 0.0800171
+offset_top = 0.519989
+offset_right = 0.23999
+offset_bottom = -0.520081
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 128
+theme_override_font_sizes/font_size = 256
+theme_override_styles/normal = SubResource("StyleBoxFlat_agb8n")
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="شمارشگرآغاز" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[node name="آویس" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_dlfgb")
+autoplay = true
+
+[node name="آب" type="Area2D" parent="."]
+position = Vector2(0, 1181.19)
+
+[node name="پویانمایی" type="AnimatedSprite2D" parent="آب"]
+position = Vector2(359.966, 17.8025)
+scale = Vector2(22.498, 5.06317)
+sprite_frames = SubResource("SpriteFrames_k2lne")
+frame_progress = 0.911628
+
+[node name="پوسته" type="CollisionShape2D" parent="آب"]
+position = Vector2(359.961, 17.8247)
+shape = SubResource("RectangleShape2D_b056l")
+
+[node name="تخته‌کلید" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 769.141
+offset_bottom = 769.141
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.4)
+metadata/_edit_lock_ = true
+
+[node name="شماره" type="Label" parent="تخته‌کلید"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_jfys7")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+text_direction = 1
+
+[node name="۷۸۹" type="HBoxContainer" parent="تخته‌کلید"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="۷" type="Button" parent="تخته‌کلید/۷۸۹"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6x4i")
+text = "۷"
+
+[node name="۸" type="Button" parent="تخته‌کلید/۷۸۹"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_dlfgb")
+text = "۸"
+
+[node name="۹" type="Button" parent="تخته‌کلید/۷۸۹"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_dlfgb")
+text = "۹"
+
+[node name="۴۵۶" type="HBoxContainer" parent="تخته‌کلید"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="۴" type="Button" parent="تخته‌کلید/۴۵۶"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6x4i")
+text = "۴"
+
+[node name="۵" type="Button" parent="تخته‌کلید/۴۵۶"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6x4i")
+text = "۵"
+
+[node name="۶" type="Button" parent="تخته‌کلید/۴۵۶"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6x4i")
+text = "۶"
+
+[node name="۱۲۳" type="HBoxContainer" parent="تخته‌کلید"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="۱" type="Button" parent="تخته‌کلید/۱۲۳"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6x4i")
+text = "۱"
+
+[node name="۲" type="Button" parent="تخته‌کلید/۱۲۳"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6x4i")
+text = "۲"
+
+[node name="۳" type="Button" parent="تخته‌کلید/۱۲۳"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6x4i")
+text = "۳"
+
+[node name="۰" type="HBoxContainer" parent="تخته‌کلید"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="❌" type="Button" parent="تخته‌کلید/۰"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6x4i")
+text = "❌"
+
+[node name="٫" type="Button" parent="تخته‌کلید/۰"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6x4i")
+text = "٫"
+
+[node name="-" type="Button" parent="تخته‌کلید/۰"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6x4i")
+text = "−
+"
+
+[node name="۰" type="Button" parent="تخته‌کلید/۰"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6x4i")
+text = "۰"
+
+[node name="✔️" type="Button" parent="تخته‌کلید/۰"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6x4i")
+text = "‍✅✔️"
+
+[node name="شمارشگر" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+
+[node name="راه" type="Path2D" parent="."]
+curve = SubResource("Curve2D_agb8n")
+
+[node name="راه قطره" type="PathFollow2D" parent="راه"]
+position = Vector2(0.154643, 80.3307)
+rotation = -0.000215271
+v_offset = 80.0
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.57079
+shape = SubResource("WorldBoundaryShape2D_lrref")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(720, 0)
+rotation = 3.14159
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+rotation = 1.57079
+shape = SubResource("WorldBoundaryShape2D_lrref")
+
+[connection signal="pressed" from="سر/ایستاننده" to="." method="بایست"]
+[connection signal="pressed" from="ایستاده/برگردان" to="." method="برگرد"]
+[connection signal="timeout" from="شمارشگرآغاز" to="." method="آغازبازی"]
+[connection signal="body_entered" from="آب" to="." method="برخورد"]
+[connection signal="pressed" from="تخته‌کلید/۷۸۹/۷" to="." method="بنویس" binds= [7]]
+[connection signal="pressed" from="تخته‌کلید/۷۸۹/۸" to="." method="بنویس" binds= [8]]
+[connection signal="pressed" from="تخته‌کلید/۷۸۹/۹" to="." method="بنویس" binds= [9]]
+[connection signal="pressed" from="تخته‌کلید/۴۵۶/۴" to="." method="بنویس" binds= [4]]
+[connection signal="pressed" from="تخته‌کلید/۴۵۶/۵" to="." method="بنویس" binds= [5]]
+[connection signal="pressed" from="تخته‌کلید/۴۵۶/۶" to="." method="بنویس" binds= [6]]
+[connection signal="pressed" from="تخته‌کلید/۱۲۳/۱" to="." method="بنویس" binds= [1]]
+[connection signal="pressed" from="تخته‌کلید/۱۲۳/۲" to="." method="بنویس" binds= [2]]
+[connection signal="pressed" from="تخته‌کلید/۱۲۳/۳" to="." method="بنویس" binds= [3]]
+[connection signal="pressed" from="تخته‌کلید/۰/❌" to="." method="بنویس" binds= [false]]
+[connection signal="pressed" from="تخته‌کلید/۰/٫" to="." method="بنویس" binds= ["."]]
+[connection signal="pressed" from="تخته‌کلید/۰/-" to="." method="بنویس" binds= ["-"]]
+[connection signal="pressed" from="تخته‌کلید/۰/۰" to="." method="بنویس" binds= [0]]
+[connection signal="pressed" from="تخته‌کلید/۰/✔️" to="." method="بنویس" binds= [true]]
+[connection signal="timeout" from="شمارشگر" to="." method="بارش"]
