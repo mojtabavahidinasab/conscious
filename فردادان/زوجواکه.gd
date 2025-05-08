@@ -151,9 +151,9 @@ func _process(delta: float):
 func بایست():
 	آویس("دکمه")
 	if $شمارشگر.paused:
-		$سر/ایستاننده.text = "  | |  "
-	else:
 		$سر/ایستاننده.text = "  <  "
+	else:
+		$سر/ایستاننده.text = "  | |  "
 	$شمارشگر.paused = not $شمارشگر.paused
 	$پا.visible = not $پا.visible
 	$ایستاده.visible = not $ایستاده.visible

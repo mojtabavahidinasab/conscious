@@ -381,7 +381,7 @@ text = "دبیره"
 [connection signal="pressed" from="نگهدارنده/بخش‌ها/سرعت/پنگوئن" to="." method="آغازبازی"]
 [connection signal="pressed" from="نگهدارنده/بخش‌ها/سرعت/خیابان" to="." method="آغازبازی"]
 [connection signal="pressed" from="نگهدارنده/بخش‌ها/ریاضی/قمار" to="." method="آغازبازی"]
-[connection signal="pressed" from="نگهدارنده/بخش‌ها/ریاضی/باران" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بخش‌ها/ریاضی/باران" to="." method="آغازبازی" binds= ["res:///صحنه‌ها/باران.tscn"]]
 [connection signal="pressed" from="نگهدارنده/بخش‌ها/ریاضی/شعبده" to="." method="آغازبازی"]
 [connection signal="pressed" from="نگهدارنده/بخش‌ها/ریاضی/آشپزباشی" to="." method="آغازبازی"]
 [connection signal="pressed" from="نگهدارنده/بخش‌ها/ریاضی/بیشتر" to="." method="آغازبازی"]

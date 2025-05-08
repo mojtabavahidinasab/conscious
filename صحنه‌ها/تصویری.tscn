@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1poxmn22l162"]
+[gd_scene load_steps=13 format=3 uid="uid://d1poxmn22l162"]
 
 [ext_resource type="Theme" uid="uid://ckmf8v6was3nc" path="res://تم.tres" id="1_ujxhy"]
 [ext_resource type="Script" uid="uid://dy17esy4x1f03" path="res://فردادان/تصویری.gd" id="2_ghcde"]
@@ -9,6 +9,50 @@ bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ghcde"]
 bg_color = Color(0, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v1ue5"]
+bg_color = Color(0, 1, 0, 1)
+skew = Vector2(1, 0)
+border_width_right = 22
+border_color = Color(0, 0, 0, 0)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pysph"]
+bg_color = Color(0, 1, 0, 1)
+skew = Vector2(1, 0)
+border_width_right = 22
+border_color = Color(0, 0, 0, 0)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ma28l"]
+bg_color = Color(0, 1, 0, 1)
+skew = Vector2(1, 0)
+border_width_right = 22
+border_color = Color(0, 0, 0, 0)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fnn1a"]
+bg_color = Color(0, 1, 0, 1)
+skew = Vector2(1, 0)
+border_width_right = 22
+border_color = Color(0, 0, 0, 0)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wdk8o"]
+bg_color = Color(0, 1, 0, 1)
+skew = Vector2(1, 0)
+border_width_right = 22
+border_color = Color(0, 0, 0, 0)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5w30p"]
+bg_color = Color(0, 1, 0, 0)
+border_width_left = 22
+border_width_top = 11
+border_width_right = 22
+border_width_bottom = 11
+border_color = Color(0, 0, 0, 1)
+corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fcapu"]
 bg_color = Color(1, 1, 1, 1)
@@ -297,6 +341,58 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ghcde")
 disabled = true
 toggle_mode = true
 
+[node name="پا" type="HBoxContainer" parent="."]
+visible = false
+clip_contents = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -83.2727
+offset_bottom = -0.272705
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="1" type="Panel" parent="پا"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_v1ue5")
+
+[node name="2" type="Panel" parent="پا"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_pysph")
+
+[node name="3" type="Panel" parent="پا"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_ma28l")
+
+[node name="4" type="Panel" parent="پا"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_fnn1a")
+
+[node name="5" type="Panel" parent="پا"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_wdk8o")
+
+[node name="چهارچوب_پا" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -83.2727
+offset_bottom = -0.272705
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_5w30p")
+
 [node name="شمارشگرآغاز" type="Timer" parent="."]
 wait_time = 4.0
 one_shot = true
@@ -309,6 +405,10 @@ one_shot = true
 [node name="شمارشگردرست" type="Timer" parent="."]
 wait_time = 4.0
 one_shot = true
+
+[node name="چشمک" type="Timer" parent="."]
+wait_time = 1.5
+autostart = true
 
 [node name="شمارش" type="Label" parent="."]
 layout_mode = 1
@@ -367,3 +467,4 @@ autoplay = true
 [connection signal="timeout" from="شمارشگرآغاز" to="." method="آغازبازی"]
 [connection signal="timeout" from="شمارشگر" to="." method="پایان_نمایش"]
 [connection signal="timeout" from="شمارشگردرست" to="." method="پایان_نمایش_درست"]
+[connection signal="timeout" from="چشمک" to="." method="چشمک"]

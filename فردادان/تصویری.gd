@@ -7,15 +7,16 @@ extends Control
 ## @tutorial:             https://github.com/mojtabavahidinasab/conscious/TODO
 
 var امتیاز = 0
+var تلاش‌ها = 5
 
 ## برابر پارسی «audio» آویس می‌باشد. هنگام فشردن دکمه‌های برگشت و ایستادن، آویسی شانسی پخش خواهد شد.
 var آویس‌های_دکمه = []
 var بعدها = 5
-var شمار_گزینه‌ها = (بعدها ** 2)
+var شمار_خانه‌ها = (بعدها ** 2)
 var برگزیدگان = []
-var شمار_برگزیدگان = int(شمار_گزینه‌ها / 2)
-var بیشینه_شمار_برگزیدگان = int(شمار_گزینه‌ها / 1.5)
-var کمینه_شمار_برگزیدگان = int(شمار_گزینه‌ها / 2.5)
+var شمار_برگزیدگان = int(شمار_خانه‌ها / 2)
+var بیشینه_شمار_برگزیدگان = int(شمار_خانه‌ها / 1.5)
+var کمینه_شمار_برگزیدگان = int(شمار_خانه‌ها / 2.5)
 var برگزیدگان_بازیکن = 0
 
 
@@ -28,19 +29,40 @@ func _ready():
 	آویس‌های_دکمه.append(preload("res://جلوه آویسی/دکمه/بشکن۲.wav"))
 
 
+func چشمک():
+	var تلاش = get_node("پا/{0}".format([تلاش‌ها]))
+	if تلاش.get_theme_stylebox("panel").bg_color == Color.TRANSPARENT:
+		تلاش.get_theme_stylebox("panel").bg_color = Color.GREEN
+	else:
+		تلاش.get_theme_stylebox("panel").bg_color = Color.TRANSPARENT
+	
+
+
 func بایست():
+	$"چهارچوب_پا".visible = not $"چهارچوب_پا".visible
+	$"پا".visible = not $"پا".visible
 	آویس("دکمه")
 	$ایستاده.visible = not $ایستاده.visible
 	if $ایستاده.visible:
-		$سر/ایستاننده.text = "  | |  "
-	else:
+		if $"شمارشگر".time_left:
+			$"شمارشگر".paused = true
+		if $"شمارشگردرست".time_left:
+			$"شمارشگردرست".paused = true
 		$سر/ایستاننده.text = "  <  "
+	else:
+		if $"شمارشگر".paused:
+			$"شمارشگر".paused = false
+		if $"شمارشگردرست".paused:
+			$"شمارشگردرست".paused = false
+		$سر/ایستاننده.text =  "  | |  "
 	$ایستاده/امتیاز.text = str(امتیاز)
 	$تن.visible = not $تن.visible
 
 
 ## هنگام لبریز شدن جام عمر بازی فراخوانی می‌شود
 func پایان_بازی():
+	$"چهارچوب_پا".hide()
+	$"پا".hide()
 	$ایستاده.show()
 	$سر.hide()
 	$تن.hide()
@@ -53,6 +75,8 @@ func آغازبازی():
 	$شمارش.hide()
 	$سر/ایستاننده.disabled = false
 	$"تن".show()
+	$"چهارچوب_پا".show()
+	$"پا".show()
 	نمایش()
 
 
@@ -132,10 +156,10 @@ func پایان_نمایش_درست():
 			var پاکستون = get_node("تن/{0}/{1}".format([هرسطری, بعدها]))
 			get_node("تن/{0}".format([هرسطری])).remove_child(پاکستون)
 		بعدها -= 1
-		شمار_گزینه‌ها = (بعدها ** 2)
-		شمار_برگزیدگان = int(شمار_گزینه‌ها / 2)
-		بیشینه_شمار_برگزیدگان = int(شمار_گزینه‌ها / 1.5)
-		کمینه_شمار_برگزیدگان = int(شمار_گزینه‌ها / 2.5)
+		شمار_خانه‌ها = (بعدها ** 2)
+		شمار_برگزیدگان = int(شمار_خانه‌ها / 2)
+		بیشینه_شمار_برگزیدگان = int(شمار_خانه‌ها / 1.5)
+		کمینه_شمار_برگزیدگان = int(شمار_خانه‌ها / 2.5)
 	
 	نمایش()
 
@@ -191,33 +215,33 @@ func پیشروی(متغیر):
 		get_node("تن/{0}/{1}".format([سطر, ستون])).get("theme_override_styles/disabled").bg_color = Color.HOT_PINK
 		get_node("تن/{0}/{1}".format([سطر, ستون])).disabled = true
 	if برگزیدگان_بازیکن == شمار_برگزیدگان:
+		get_node("پا/{0}".format([تلاش‌ها])).get_theme_stylebox("panel").bg_color = Color.TRANSPARENT
+		تلاش‌ها -= 1
+		if not تلاش‌ها:
+			$"چشمک".disconnect("timeout", چشمک)
+			پایان_بازی()
 		برگزیدگان_بازیکن = 0
 		if not len(برگزیدگان):
 			آویس("پیروزی")  #TODO: آویس را ببر تا کوتاه باشد
 			شمار_برگزیدگان += 1
 			if شمار_برگزیدگان == بیشینه_شمار_برگزیدگان:
 				بعدها += 1
-				شمار_گزینه‌ها = (بعدها ** 2)
-				شمار_برگزیدگان = int(شمار_گزینه‌ها / 2)
-				بیشینه_شمار_برگزیدگان = int(شمار_گزینه‌ها / 1.5)
-				کمینه_شمار_برگزیدگان = int(شمار_گزینه‌ها / 2.5)
+				شمار_خانه‌ها = (بعدها ** 2)
+				شمار_برگزیدگان = int(شمار_خانه‌ها / 2)
+				بیشینه_شمار_برگزیدگان = int(شمار_خانه‌ها / 1.5)
+				کمینه_شمار_برگزیدگان = int(شمار_خانه‌ها / 2.5)
 				var نوسطر = HBoxContainer.new()
 				نوسطر.name = str(بعدها)
 				$"تن".add_child(نوسطر)
 				$"تن".get_child(بعدها - 1).size_flags_vertical = SIZE_EXPAND_FILL
 				for هرسطر in range(1, بعدها + 1):
 					for هرستون in range(1, بعدها + 1):
-						var نوستون = BaseButton.new() # چرا نوخانه‌ها نامرئی‌اند؟ TODO
+						var نوستون = Button.new() # چرا نوخانه‌ها نامرئی‌اند؟ TODO
 						نوستون.name = str(هرستون)
 						if هرسطر == بعدها or هرستون == بعدها:
 							get_node("تن/{0}".format([هرسطر])).add_child(نوستون)
 							get_node("تن/{0}/{1}".format([هرسطر, هرستون])).size_flags_horizontal = SIZE_EXPAND_FILL
 							get_node("تن/{0}/{1}".format([هرسطر, هرستون])).pressed.connect(پیشروی.bind([هرسطر, هرستون]))
-							get_node("تن/{0}/{1}".format([هرسطر, هرستون])).theme = preload("res://تم.tres")
-							get_node("تن/{0}/{1}".format([هرسطر, هرستون])).add_theme_stylebox_override("disabled", نوسبک)
-							get_node("تن/{0}/{1}".format([هرسطر, هرستون])).toggle_mode = true
-							get_node("تن/{0}/{1}".format([هرسطر, هرستون])).disabled = true
-							get_node("تن/{0}/{1}".format([هرسطر, هرستون])).get("theme_override_styles/disabled").bg_color = Color.BLACK
 			امتیاز += 1
 			$"سر/امتیاز".text = str(امتیاز)
 			نمایش()
