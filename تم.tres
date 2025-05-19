@@ -1,16 +1,9 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://ckmf8v6was3nc"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://ckmf8v6was3nc"]
 
 [ext_resource type="FontFile" uid="uid://be3fsxd0uyh7k" path="res://دبیره‌ها/Amiri-Regular.ttf" id="2_5lfgg"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6nf5p"]
-bg_color = Color(0, 0, 0, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5lfgg"]
 bg_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 666
-corner_radius_top_right = 666
-corner_radius_bottom_right = 666
-corner_radius_bottom_left = 666
 corner_detail = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bp7ku"]
@@ -61,7 +54,7 @@ Button/fonts/font = ExtResource("2_5lfgg")
 Button/styles/disabled = null
 Button/styles/focus = null
 Button/styles/hover = null
-Button/styles/normal = SubResource("StyleBoxFlat_6nf5p")
+Button/styles/normal = SubResource("StyleBoxFlat_5lfgg")
 Button/styles/pressed = SubResource("StyleBoxFlat_5lfgg")
 Label/colors/font_color = Color(1, 1, 1, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 0)

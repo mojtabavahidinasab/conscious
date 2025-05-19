@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=3 uid="uid://bs0iulq0ujois"]
+
+[ext_resource type="Script" uid="uid://cp3gxkof6ejha" path="res://فردادان/آسمان_خراش.gd" id="1_jhp5b"]
+[ext_resource type="Theme" uid="uid://ckmf8v6was3nc" path="res://تم.tres" id="1_p8hvl"]
+[ext_resource type="PackedScene" uid="uid://gdinkoe34vyv" path="res://صحنه‌ها/طبقه_ازپیش_ساخته.tscn" id="2_0w1wu"]
+[ext_resource type="PackedScene" uid="uid://cmv5qev6nmt2q" path="res://صحنه‌ها/سر.tscn" id="2_d5uhe"]
+[ext_resource type="PackedScene" uid="uid://dqxkvcepuv835" path="res://صحنه‌ها/ایستاده.tscn" id="3_0w1wu"]
+[ext_resource type="Texture2D" uid="uid://dkpqpykjok6x1" path="res://فرتور/blue_land.png" id="3_5ft34"]
+[ext_resource type="PackedScene" uid="uid://jkpxqgqjbuk7" path="res://صحنه‌ها/آوا.tscn" id="6_uycvh"]
+[ext_resource type="PackedScene" uid="uid://cdmbamtpgxqn3" path="res://صحنه‌ها/شمارش_آغازبازی.tscn" id="7_p8hvl"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5ft34"]
+
+[node name="آسمان خراش" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_p8hvl")
+script = ExtResource("1_jhp5b")
+"طبقه" = ExtResource("2_0w1wu")
+
+[node name="دوربین" type="Camera2D" parent="."]
+position = Vector2(360, 640)
+
+[node name="شمارشگر" type="Timer" parent="."]
+wait_time = 1.8
+one_shot = true
+
+[node name="زمین" type="StaticBody2D" parent="."]
+position = Vector2(366, 1280)
+
+[node name="رو" type="CollisionShape2D" parent="زمین"]
+shape = SubResource("WorldBoundaryShape2D_5ft34")
+
+[node name="سر" parent="." instance=ExtResource("2_d5uhe")]
+z_index = 1
+layout_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ایستاده" parent="." instance=ExtResource("3_0w1wu")]
+z_index = 1
+layout_mode = 1
+offset_top = -197.5
+offset_bottom = 197.5
+
+[node name="آوا" parent="." instance=ExtResource("6_uycvh")]
+
+[node name="شمارش" parent="." instance=ExtResource("7_p8hvl")]
+z_index = 2
+layout_mode = 1
+
+[node name="جلوه پس‌زمینه" type="Parallax2D" parent="."]
+scale = Vector2(0.703125, 1.25)
+scroll_scale = Vector2(0.3, 0.3)
+repeat_size = Vector2(0, 300)
+
+[node name="پس‌زمینه" type="Sprite2D" parent="جلوه پس‌زمینه"]
+texture = ExtResource("3_5ft34")
+centered = false
+
+[node name="شمارشگرنمایش" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="شمارشگرنمایش" to="." method="پایان‌نمایش"]
