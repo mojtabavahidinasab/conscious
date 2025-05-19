@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://jkpxqgqjbuk7"]
+
+[ext_resource type="Script" uid="uid://dyb3i3cfus2iq" path="res://فردادان/آوا.gd" id="2_wqkf0"]
+
+[node name="آوا" type="AudioStreamPlayer"]
+process_mode = 3
+script = ExtResource("2_wqkf0")

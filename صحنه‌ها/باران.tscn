@@ -1,9 +1,11 @@
-[gd_scene load_steps=29 format=3 uid="uid://jlkupge2q7lw"]
+[gd_scene load_steps=30 format=3 uid="uid://jlkupge2q7lw"]
 
 [ext_resource type="Theme" uid="uid://ckmf8v6was3nc" path="res://تم.tres" id="1_5fqva"]
 [ext_resource type="Script" uid="uid://tyl4nxtkjbvb" path="res://فردادان/باران.gd" id="2_agb8n"]
-[ext_resource type="AudioStream" uid="uid://dxemw7754sbf2" path="res://جلوه آویسی/شمارشگرآغاز.wav" id="2_dlfgb"]
 [ext_resource type="PackedScene" uid="uid://68c005swwops" path="res://صحنه‌ها/قطره.tscn" id="3_agb8n"]
+[ext_resource type="PackedScene" uid="uid://cmv5qev6nmt2q" path="res://صحنه‌ها/سر.tscn" id="4_icgkd"]
+[ext_resource type="PackedScene" uid="uid://cdmbamtpgxqn3" path="res://صحنه‌ها/شمارش_آغازبازی.tscn" id="5_4g4ip"]
+[ext_resource type="PackedScene" uid="uid://jkpxqgqjbuk7" path="res://صحنه‌ها/آوا.tscn" id="6_4g4ip"]
 [ext_resource type="Texture2D" uid="uid://qloocjrith3x" path="res://فرتور/ocean01.png" id="6_icgkd"]
 [ext_resource type="Texture2D" uid="uid://bql6hcpna5ild" path="res://فرتور/ocean02.png" id="7_4g4ip"]
 [ext_resource type="Texture2D" uid="uid://cego4aw5ih4s6" path="res://فرتور/ocean03.png" id="8_3dl32"]
@@ -20,14 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://36qlhfv828aa" path="res://فرتور/ocean14.png" id="19_da714"]
 [ext_resource type="Texture2D" uid="uid://cilx1b6mqmxx2" path="res://فرتور/ocean15.png" id="20_gnghc"]
 [ext_resource type="Texture2D" uid="uid://bcymptjj2l6xw" path="res://فرتور/ocean16.png" id="21_xwoyk"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_agb8n"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 666
-corner_radius_top_right = 666
-corner_radius_bottom_right = 666
-corner_radius_bottom_left = 666
-corner_detail = 1
+[ext_resource type="PackedScene" uid="uid://dqxkvcepuv835" path="res://صحنه‌ها/ایستاده.tscn" id="22_4g4ip"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k2lne"]
 animations = [{
@@ -99,13 +94,9 @@ bg_color = Color(0, 0, 0, 0.490196)
 
 [sub_resource type="Curve2D" id="Curve2D_agb8n"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0.137421, 0.330725, 0, 0, 0, 0, 719.934, 0.175774)
+"points": PackedVector2Array(0, 0, 0, 0, 111, 0.331, 0, 0, 0, 0, 619, 0.176)
 }
 point_count = 2
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lrref"]
-custom_solver_bias = 1.0
-distance = 83.03
 
 [node name="باران" type="Control"]
 layout_mode = 3
@@ -118,74 +109,13 @@ theme = ExtResource("1_5fqva")
 script = ExtResource("2_agb8n")
 "قطره" = ExtResource("3_agb8n")
 
-[node name="سر" type="HBoxContainer" parent="."]
+[node name="سر" parent="." instance=ExtResource("4_icgkd")]
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-grow_horizontal = 2
+offset_bottom = 83.0
 
-[node name="امتیاز" type="Label" parent="سر"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ایستاننده" type="Button" parent="سر"]
-layout_mode = 2
-disabled = true
-text = "  | |  "
-
-[node name="ایستاده" type="VBoxContainer" parent="."]
+[node name="شمارش" parent="." instance=ExtResource("5_4g4ip")]
+z_index = 3
 layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="امتیاز" type="Label" parent="ایستاده"]
-layout_mode = 2
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="برگردان" type="Button" parent="ایستاده"]
-layout_mode = 2
-text = "برگرد"
-
-[node name="شمارش" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.117944
-anchor_top = 0.276938
-anchor_right = 0.851056
-anchor_bottom = 0.694938
-offset_left = 0.0800171
-offset_top = 0.519989
-offset_right = 0.23999
-offset_bottom = -0.520081
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 128
-theme_override_font_sizes/font_size = 256
-theme_override_styles/normal = SubResource("StyleBoxFlat_agb8n")
-text = "3"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="شمارشگرآغاز" type="Timer" parent="."]
-wait_time = 4.0
-one_shot = true
-autostart = true
-
-[node name="آویس" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_dlfgb")
-autoplay = true
 
 [node name="آب" type="Area2D" parent="."]
 position = Vector2(0, 1181.19)
@@ -339,32 +269,21 @@ text = "‍✅✔️"
 [node name="شمارشگر" type="Timer" parent="."]
 wait_time = 2.5
 one_shot = true
+autostart = true
 
 [node name="راه" type="Path2D" parent="."]
 curve = SubResource("Curve2D_agb8n")
 
 [node name="راه قطره" type="PathFollow2D" parent="راه"]
-position = Vector2(0.154643, 80.3307)
-rotation = -0.000215271
+position = Vector2(111.024, 80.331)
+rotation = -0.000305118
 v_offset = 80.0
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="ایستاده" parent="." instance=ExtResource("22_4g4ip")]
+layout_mode = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-rotation = 1.57079
-shape = SubResource("WorldBoundaryShape2D_lrref")
+[node name="آوا" parent="." instance=ExtResource("6_4g4ip")]
 
-[node name="Area2D2" type="Area2D" parent="."]
-position = Vector2(720, 0)
-rotation = 3.14159
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-rotation = 1.57079
-shape = SubResource("WorldBoundaryShape2D_lrref")
-
-[connection signal="pressed" from="سر/ایستاننده" to="." method="بایست"]
-[connection signal="pressed" from="ایستاده/برگردان" to="." method="برگرد"]
-[connection signal="timeout" from="شمارشگرآغاز" to="." method="آغازبازی"]
 [connection signal="body_entered" from="آب" to="." method="برخورد"]
 [connection signal="pressed" from="تخته‌کلید/۷۸۹/۷" to="." method="بنویس" binds= [7]]
 [connection signal="pressed" from="تخته‌کلید/۷۸۹/۸" to="." method="بنویس" binds= [8]]

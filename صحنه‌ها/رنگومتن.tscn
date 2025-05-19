@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bxs5u82yt08gx"]
+[gd_scene load_steps=9 format=3 uid="uid://bxs5u82yt08gx"]
 
 [ext_resource type="Theme" uid="uid://ckmf8v6was3nc" path="res://تم.tres" id="1_e8c32"]
 [ext_resource type="Script" uid="uid://cbomctevd5n6e" path="res://فردادان/رنگومتن.gd" id="2_vf0dl"]
-[ext_resource type="AudioStream" uid="uid://dxemw7754sbf2" path="res://جلوه آویسی/شمارشگرآغاز.wav" id="3_vf0dl"]
+[ext_resource type="PackedScene" uid="uid://cmv5qev6nmt2q" path="res://صحنه‌ها/سر.tscn" id="3_klikh"]
+[ext_resource type="PackedScene" uid="uid://dqxkvcepuv835" path="res://صحنه‌ها/ایستاده.tscn" id="4_iuect"]
+[ext_resource type="PackedScene" uid="uid://jkpxqgqjbuk7" path="res://صحنه‌ها/آوا.tscn" id="5_iuect"]
+[ext_resource type="PackedScene" uid="uid://cdmbamtpgxqn3" path="res://صحنه‌ها/شمارش_آغازبازی.tscn" id="6_tnolh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lbewx"]
 bg_color = Color(0.172549, 0.172549, 0.172549, 1)
@@ -11,14 +14,6 @@ skew = Vector2(0, 0.15)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7gyot"]
 bg_color = Color(0.172549, 0.172549, 0.172549, 1)
 skew = Vector2(0, 0.15)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3wju0"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 666
-corner_radius_top_right = 666
-corner_radius_bottom_right = 666
-corner_radius_bottom_left = 666
-corner_detail = 1
 
 [node name="متن رنگ" type="Control"]
 layout_mode = 3
@@ -30,56 +25,16 @@ grow_vertical = 2
 theme = ExtResource("1_e8c32")
 script = ExtResource("2_vf0dl")
 
-[node name="سر" type="HBoxContainer" parent="."]
+[node name="سر" parent="." instance=ExtResource("3_klikh")]
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 31.0
-grow_horizontal = 2
+offset_bottom = 83.0
 
-[node name="زمان" type="Label" parent="سر"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "60"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="امتیاز" type="Label" parent="سر"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ایستاننده" type="Button" parent="سر"]
-layout_mode = 2
-disabled = true
-text = "  | |  "
-
-[node name="ایستاده" type="VBoxContainer" parent="."]
-visible = false
+[node name="ایستاده" parent="." instance=ExtResource("4_iuect")]
 layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -35.0
-offset_bottom = 35.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="امتیاز" type="Label" parent="ایستاده"]
-layout_mode = 2
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="برگردان" type="Button" parent="ایستاده"]
-layout_mode = 2
-text = "برگرد"
+offset_top = -197.5
+offset_bottom = 197.5
 
 [node name="تن" type="VBoxContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -121,54 +76,23 @@ grow_vertical = 0
 [node name="خیر" type="Button" parent="پا"]
 layout_mode = 2
 size_flags_horizontal = 3
-disabled = true
 text = "خیر"
 
 [node name="بله" type="Button" parent="پا"]
 layout_mode = 2
 size_flags_horizontal = 3
-disabled = true
 text = "بله"
-
-[node name="شمارشگرآغاز" type="Timer" parent="."]
-wait_time = 4.0
-one_shot = true
-autostart = true
 
 [node name="شمارشگر" type="Timer" parent="."]
 wait_time = 60.0
 one_shot = true
 
-[node name="شمارش" type="Label" parent="."]
+[node name="آوا" parent="." instance=ExtResource("5_iuect")]
+
+[node name="شمارش" parent="." instance=ExtResource("6_tnolh")]
+process_mode = 2
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.117944
-anchor_top = 0.276938
-anchor_right = 0.851056
-anchor_bottom = 0.694938
-offset_left = 0.0800018
-offset_top = 0.519989
-offset_right = 0.23999
-offset_bottom = -0.520081
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 128
-theme_override_font_sizes/font_size = 256
-theme_override_styles/normal = SubResource("StyleBoxFlat_3wju0")
-text = "3"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
 
-[node name="آویس" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_vf0dl")
-autoplay = true
-
-[connection signal="pressed" from="سر/ایستاننده" to="." method="بایست"]
-[connection signal="pressed" from="ایستاده/برگردان" to="." method="برگرد"]
 [connection signal="pressed" from="پا/خیر" to="." method="پیشروی" binds= [false]]
 [connection signal="pressed" from="پا/بله" to="." method="پیشروی" binds= [true]]
-[connection signal="timeout" from="شمارشگرآغاز" to="." method="آغازبازی"]
 [connection signal="timeout" from="شمارشگر" to="." method="پایان_بازی"]

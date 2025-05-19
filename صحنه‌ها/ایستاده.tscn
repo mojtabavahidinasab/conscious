@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqxkvcepuv835"]
+
+[ext_resource type="Theme" uid="uid://ckmf8v6was3nc" path="res://تم.tres" id="1_suvpd"]
+[ext_resource type="Script" uid="uid://ct0fymyob0jt7" path="res://فردادان/ایستاده.gd" id="2_vyke3"]
+[ext_resource type="PackedScene" uid="uid://jkpxqgqjbuk7" path="res://صحنه‌ها/آوا.tscn" id="3_vyke3"]
+
+[node name="ایستاده" type="VBoxContainer"]
+process_mode = 2
+visible = false
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_suvpd")
+script = ExtResource("2_vyke3")
+
+[node name="برچسب" type="Label" parent="."]
+layout_mode = 2
+size_flags_vertical = 6
+text = "امتیاز:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="امتیاز" type="Label" parent="."]
+layout_mode = 2
+size_flags_vertical = 6
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ادامه" type="Button" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+text = "ادامه بازی"
+
+[node name="ازنو" type="Button" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+text = "باز ازنو بازی ازنو"
+
+[node name="برگردان" type="Button" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+text = "بیرون رفتن از بازی"
+
+[node name="آوا" parent="." instance=ExtResource("3_vyke3")]

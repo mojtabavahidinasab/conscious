@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmv5qev6nmt2q"]
+
+[ext_resource type="Theme" uid="uid://ckmf8v6was3nc" path="res://تم.tres" id="1_gre0g"]
+[ext_resource type="Script" uid="uid://cvdqkeyid7jsb" path="res://فردادان/سر.gd" id="2_da31m"]
+[ext_resource type="PackedScene" uid="uid://jkpxqgqjbuk7" path="res://صحنه‌ها/آوا.tscn" id="3_eywgq"]
+
+[node name="سر" type="HBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 31.0
+grow_horizontal = 2
+theme = ExtResource("1_gre0g")
+script = ExtResource("2_da31m")
+
+[node name="زمان" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "زمان: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="امتیاز" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "امتیاز: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ایستاننده" type="Button" parent="."]
+layout_mode = 2
+text = "  | |  "
+
+[node name="آوا" parent="." instance=ExtResource("3_eywgq")]
