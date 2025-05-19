@@ -9,8 +9,6 @@ extends Control
 var امتیاز = 0
 var تلاش‌ها = 5
 
-## برابر پارسی «audio» آویس می‌باشد. هنگام فشردن دکمه‌های برگشت و ایستادن، آویسی شانسی پخش خواهد شد.
-var آویس‌های_دکمه = []
 var بعدها = 5
 var شمار_خانه‌ها = (بعدها ** 2)
 var برگزیدگان = []
@@ -22,11 +20,15 @@ var برگزیدگان_بازیکن = 0
 
 ## نام این تابع یک واژه کلیدی می‌باشد برای همین نمی‌توان نامی فارسی جایگزین آن نمود.
 func _ready():
-	
-	# اینها را نمی‌شد خارج از تابع نوشت. زیرا خطای زیر از این کار ایراد می‌گیرد:
-	# Line X:Unexpected identifier "آویس‌های_دکمه" in class body.
-	آویس‌های_دکمه.append(preload("res://جلوه آویسی/دکمه/بشکن۱.wav"))
-	آویس‌های_دکمه.append(preload("res://جلوه آویسی/دکمه/بشکن۲.wav"))
+	تلاش‌ها = 5
+	$"سر/ایستاننده".pressed.connect($"سر".بایست.bind(get_children()))
+	$"ایستاده/ادامه".pressed.connect($"ایستاده".ادامه_بازی.bind(get_children()))
+	$"ایستاده/ازنو".pressed.connect($"ایستاده".بازی_ازنو)
+	$"ایستاده/برگردان".pressed.connect($"ایستاده".بیرون_رفتن_ازبازی)
+	for سطر in range(1, بعدها + 1):
+		for ستون in range(1, بعدها + 1):
+			get_node("تن/{0}/{1}".format([سطر, ستون])).pressed.connect(پیشروی.bind([سطر, ستون]))
+	نمایش()
 
 
 func چشمک():
@@ -35,60 +37,29 @@ func چشمک():
 		تلاش.get_theme_stylebox("panel").bg_color = Color.GREEN
 	else:
 		تلاش.get_theme_stylebox("panel").bg_color = Color.TRANSPARENT
-	
-
-
-func بایست():
-	$"چهارچوب_پا".visible = not $"چهارچوب_پا".visible
-	$"پا".visible = not $"پا".visible
-	آویس("دکمه")
-	$ایستاده.visible = not $ایستاده.visible
-	if $ایستاده.visible:
-		if $"شمارشگر".time_left:
-			$"شمارشگر".paused = true
-		if $"شمارشگردرست".time_left:
-			$"شمارشگردرست".paused = true
-		$سر/ایستاننده.text = "  <  "
-	else:
-		if $"شمارشگر".paused:
-			$"شمارشگر".paused = false
-		if $"شمارشگردرست".paused:
-			$"شمارشگردرست".paused = false
-		$سر/ایستاننده.text =  "  | |  "
-	$ایستاده/امتیاز.text = str(امتیاز)
-	$تن.visible = not $تن.visible
 
 
 ## هنگام لبریز شدن جام عمر بازی فراخوانی می‌شود
 func پایان_بازی():
+	for بچه in $پا.get_children():
+		بچه.visible = true
+	$"ایستاده/ادامه".hide()
 	$"چهارچوب_پا".hide()
 	$"پا".hide()
 	$ایستاده.show()
 	$سر.hide()
 	$تن.hide()
 	$ایستاده/امتیاز.text = str(امتیاز)
+	get_tree().paused = true
 
-
-## هنگام پایان شمارشگر آغاز تابع فراخوانی می‌گردد
-func آغازبازی():
-	آویس("آغاز")
-	$شمارش.hide()
-	$سر/ایستاننده.disabled = false
-	$"تن".show()
-	$"چهارچوب_پا".show()
-	$"پا".show()
-	نمایش()
 
 
 ## نام این تابع یک واژه کلیدی می‌باشد برای همین نمی‌توان نامی فارسی جایگزین آن نمود.
 func _process(delta: float):
-	if $شمارشگرآغاز.time_left:
-		$شمارش.text = str(int($شمارشگرآغاز.time_left))
-
-
-func برگرد():
-	آویس("دکمه")
-	get_tree().change_scene_to_file("res://صحنه‌ها/سرآغاز.tscn")
+	if not تلاش‌ها and not $"شمارشگردرست".time_left:  # FIXME پس از آخرین تلاش بی‌درنگ بازی تمام می‌شود بدون توجه به نمایش‌درست
+		$"چشمک".disconnect("timeout", چشمک)
+		پایان_بازی()
+	$"سر/زمان".text = "زمان: {0}".format([پارسی‌سازی.شماره_پارسی(int($"شمارشگر".time_left))])
 
 
 ## اگر بازیکن خانه نادرستی گزیده باشد. این تابع فراحوانی و خانه‌های درست آشکار می‌گردند.
@@ -109,10 +80,10 @@ func برگزیدن():
 	for گزینش in range(شمار_برگزیدگان - len(برگزیدگان)):
 		var سطر_برگزیده = randi_range(1, بعدها)
 		var ستون_برگزیده = randi_range(1, بعدها)
-		if [سطر_برگزیده, ستون_برگزیده] not in برگزیدگان:
-			برگزیدگان.append([سطر_برگزیده, ستون_برگزیده])
-	if len(برگزیدگان) != شمار_برگزیدگان:
-		return برگزیدن()
+		while [سطر_برگزیده, ستون_برگزیده] in برگزیدگان:
+			سطر_برگزیده = randi_range(1, بعدها)
+			ستون_برگزیده = randi_range(1, بعدها)
+		برگزیدگان.append([سطر_برگزیده, ستون_برگزیده])
 
 
 ## نخستین تابعی که در آغاز بازی فراخوانی می‌گردد.
@@ -149,12 +120,9 @@ func پایان_نمایش_درست():
 			get_node("تن/{0}/{1}".format([سطر, ستون])).button_pressed = false
 	
 	if شمار_برگزیدگان == کمینه_شمار_برگزیدگان:
-		var پاکسطر = get_node("تن/{0}".format([بعدها]))
-		$"تن".remove_child(پاکسطر)
-		بعدها -= 1
-		for هرسطری in range(1, بعدها + 1):
-			var پاکستون = get_node("تن/{0}/{1}".format([هرسطری, بعدها]))
-			get_node("تن/{0}".format([هرسطری])).remove_child(پاکستون)
+		get_node("تن/{0}".format([بعدها])).free()
+		for هرسطری in range(1, بعدها):
+			get_node("تن/{0}/{1}".format([هرسطری, بعدها])).free()
 		بعدها -= 1
 		شمار_خانه‌ها = (بعدها ** 2)
 		شمار_برگزیدگان = int(شمار_خانه‌ها / 2)
@@ -175,54 +143,30 @@ func پایان_نمایش():
 			get_node("تن/{0}/{1}".format([سطر, ستون])).disabled = false
 
 
-func آویس(متغیر):
-	if متغیر == "درست":
-		$آویس.stream = preload("res://جلوه آویسی/درست.ogg")
-		$آویس.play()
-	elif متغیر == "نادرست":
-		$آویس.stream = preload("res://جلوه آویسی/نادرست.wav")
-		$آویس.play()
-	elif متغیر == "پیروزی":
-		$آویس.stream = preload("res://جلوه آویسی/پیروزی۱.wav")
-		$آویس.play()
-	elif متغیر == "باخت":
-		$آویس.stream = preload("res://جلوه آویسی/باخت.wav")
-		$آویس.play()
-	elif متغیر == "آغاز":
-		$آویس.stream = preload("res://جلوه آویسی/آغاز.mp3")
-		$آویس.play()
-	elif متغیر == "دکمه":
-		$آویس.stream = آویس‌های_دکمه.pick_random()
-		$آویس.play()
-
-
 ## همان پیشرفت. چه بازیکن درست باشد و چه نادرست پیشرفت برداشت می‌شود.
 ## بررسی درستی بازگزینی خانه‌ها، کاهش و افزایش بعد تخته کار ایشان می‌باشد.
-func پیشروی(متغیر):
+func پیشروی(متغیر: Array):
 	برگزیدگان_بازیکن += 1
 	var سطر = متغیر[0]
 	var ستون = متغیر[1]
 	var نوسبک = get_node("تن/{0}/{1}".format([سطر, ستون])).get_theme_stylebox("disabled").duplicate()
 	if متغیر in برگزیدگان:
-		آویس("درست")
+		$آوا.سردادن("درست")
 		get_node("تن/{0}/{1}".format([سطر, ستون])).disabled = true
 		get_node("تن/{0}/{1}".format([سطر, ستون])).add_theme_stylebox_override("disabled", نوسبک)
 		get_node("تن/{0}/{1}".format([سطر, ستون])).get("theme_override_styles/disabled").bg_color = Color.CYAN
 		برگزیدگان.erase(متغیر)
 	else:
-		آویس("نادرست")
+		$آوا.سردادن("نادرست")
 		get_node("تن/{0}/{1}".format([سطر, ستون])).add_theme_stylebox_override("disabled", نوسبک)
 		get_node("تن/{0}/{1}".format([سطر, ستون])).get("theme_override_styles/disabled").bg_color = Color.HOT_PINK
 		get_node("تن/{0}/{1}".format([سطر, ستون])).disabled = true
 	if برگزیدگان_بازیکن == شمار_برگزیدگان:
 		get_node("پا/{0}".format([تلاش‌ها])).get_theme_stylebox("panel").bg_color = Color.TRANSPARENT
 		تلاش‌ها -= 1
-		if not تلاش‌ها:
-			$"چشمک".disconnect("timeout", چشمک)
-			پایان_بازی()
 		برگزیدگان_بازیکن = 0
 		if not len(برگزیدگان):
-			آویس("پیروزی")  #TODO: آویس را ببر تا کوتاه باشد
+			$آوا.سردادن("پیروزی")  #TODO: آوا را ببر تا کوتاه باشد
 			شمار_برگزیدگان += 1
 			if شمار_برگزیدگان == بیشینه_شمار_برگزیدگان:
 				بعدها += 1
@@ -234,20 +178,23 @@ func پیشروی(متغیر):
 				نوسطر.name = str(بعدها)
 				$"تن".add_child(نوسطر)
 				$"تن".get_child(بعدها - 1).size_flags_vertical = SIZE_EXPAND_FILL
+				$"تن".get_child(بعدها - 1).size_flags_horizontal = SIZE_EXPAND_FILL
 				for هرسطر in range(1, بعدها + 1):
 					for هرستون in range(1, بعدها + 1):
-						var نوستون = Button.new() # چرا نوخانه‌ها نامرئی‌اند؟ TODO
+						var نوستون = Button.new()
 						نوستون.name = str(هرستون)
 						if هرسطر == بعدها or هرستون == بعدها:
 							get_node("تن/{0}".format([هرسطر])).add_child(نوستون)
 							get_node("تن/{0}/{1}".format([هرسطر, هرستون])).size_flags_horizontal = SIZE_EXPAND_FILL
+							get_node("تن/{0}/{1}".format([هرسطر, هرستون])).size_flags_vertical = SIZE_EXPAND_FILL
 							get_node("تن/{0}/{1}".format([هرسطر, هرستون])).pressed.connect(پیشروی.bind([هرسطر, هرستون]))
 			امتیاز += 1
-			$"سر/امتیاز".text = str(امتیاز)
+			$"سر/امتیاز".text = "امتیاز: {0}".format([پارسی‌سازی.شماره_پارسی(امتیاز)])
+			$"ایستاده/امتیاز".text = پارسی‌سازی.شماره_پارسی(امتیاز)
 			نمایش()
 		else:
-			if $"آویس".stream == preload("res://جلوه آویسی/نادرست.wav"):
-				آویس("باخت")
+			if $آوا.stream == preload("res://آواها/نادرست.wav"):
+				$آوا.سردادن("باخت")
 			if شمار_برگزیدگان > 4:
 				شمار_برگزیدگان -= 1
 			نمایش_درست()
