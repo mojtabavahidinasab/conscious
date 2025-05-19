@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://biwoaryo4465a"
-path="res://.godot/imported/message_round.png-bb6a9e6c6d9186d8d015ce8ce0d55821.ctex"
+uid="uid://dkpqpykjok6x1"
+path="res://.godot/imported/blue_land.png-26f883eb70730bba84a6bb08fcaaf002.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://فرتور/message_round.png"
-dest_files=["res://.godot/imported/message_round.png-bb6a9e6c6d9186d8d015ce8ce0d55821.ctex"]
+source_file="res://فرتور/blue_land.png"
+dest_files=["res://.godot/imported/blue_land.png-26f883eb70730bba84a6bb08fcaaf002.ctex"]
 
 [params]
 
