@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sauytlf7c7g1"
-path="res://.godot/imported/ocean08.png-a1840b15ed758f33b31fec08584ac476.ctex"
+uid="uid://bnc7ovmoyl6yd"
+path="res://.godot/imported/ocean11.png-185468dbc91fff0f6bce37535f6f46c1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://فرتور/ocean08.png"
-dest_files=["res://.godot/imported/ocean08.png-a1840b15ed758f33b31fec08584ac476.ctex"]
+source_file="res://فرتوران/ocean11.png"
+dest_files=["res://.godot/imported/ocean11.png-185468dbc91fff0f6bce37535f6f46c1.ctex"]
 
 [params]
 
