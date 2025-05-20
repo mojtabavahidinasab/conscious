@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://ckmf8v6was3nc"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://ckmf8v6was3nc"]
 
 [ext_resource type="FontFile" uid="uid://be3fsxd0uyh7k" path="res://دبیره‌ها/Amiri-Regular.ttf" id="2_5lfgg"]
 
@@ -19,15 +19,6 @@ bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g5k8l"]
 bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n2n3n"]
-bg_color = Color(1, 0, 0, 1)
-corner_radius_top_left = 666
-corner_radius_top_right = 666
-corner_radius_bottom_right = 666
-corner_radius_bottom_left = 666
-corner_detail = 1
-expand_margin_right = 11.0
 
 [resource]
 default_font = ExtResource("2_5lfgg")
@@ -69,14 +60,3 @@ Label/fonts/font = ExtResource("2_5lfgg")
 Label/styles/normal = SubResource("StyleBoxFlat_bp7ku")
 TabContainer/styles/tab_focus = SubResource("StyleBoxFlat_gpdqu")
 TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_g5k8l")
-VScrollBar/icons/decrement = null
-VScrollBar/icons/decrement_highlight = null
-VScrollBar/icons/decrement_pressed = null
-VScrollBar/icons/increment = null
-VScrollBar/icons/increment_highlight = null
-VScrollBar/icons/increment_pressed = null
-VScrollBar/styles/grabber = SubResource("StyleBoxFlat_n2n3n")
-VScrollBar/styles/grabber_highlight = null
-VScrollBar/styles/grabber_pressed = null
-VScrollBar/styles/scroll = null
-VScrollBar/styles/scroll_focus = null
