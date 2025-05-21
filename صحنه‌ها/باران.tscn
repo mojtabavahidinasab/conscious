@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://jlkupge2q7lw"]
+[gd_scene load_steps=34 format=3 uid="uid://jlkupge2q7lw"]
 
 [ext_resource type="Theme" uid="uid://ckmf8v6was3nc" path="res://تم.tres" id="1_5fqva"]
 [ext_resource type="Script" uid="uid://tyl4nxtkjbvb" path="res://فردادان/باران.gd" id="2_agb8n"]
@@ -6,23 +6,27 @@
 [ext_resource type="PackedScene" uid="uid://cmv5qev6nmt2q" path="res://صحنه‌ها/سر.tscn" id="4_icgkd"]
 [ext_resource type="PackedScene" uid="uid://cdmbamtpgxqn3" path="res://صحنه‌ها/شمارش_آغازبازی.tscn" id="5_4g4ip"]
 [ext_resource type="PackedScene" uid="uid://jkpxqgqjbuk7" path="res://صحنه‌ها/آوا.tscn" id="6_4g4ip"]
-[ext_resource type="Texture2D" uid="uid://qloocjrith3x" path="res://فرتور/ocean01.png" id="6_icgkd"]
-[ext_resource type="Texture2D" uid="uid://bql6hcpna5ild" path="res://فرتور/ocean02.png" id="7_4g4ip"]
-[ext_resource type="Texture2D" uid="uid://cego4aw5ih4s6" path="res://فرتور/ocean03.png" id="8_3dl32"]
-[ext_resource type="Texture2D" uid="uid://4x5m06olpett" path="res://فرتور/ocean04.png" id="9_mnj42"]
-[ext_resource type="Texture2D" uid="uid://b6bsyc2xt18g0" path="res://فرتور/ocean05.png" id="10_dgsgv"]
-[ext_resource type="Texture2D" uid="uid://c7dnb5amxnbu7" path="res://فرتور/ocean06.png" id="11_v40f3"]
-[ext_resource type="Texture2D" uid="uid://le0xmug0c3kv" path="res://فرتور/ocean07.png" id="12_y47hh"]
-[ext_resource type="Texture2D" uid="uid://sauytlf7c7g1" path="res://فرتور/ocean08.png" id="13_3vsik"]
-[ext_resource type="Texture2D" uid="uid://ggfxxbysmji0" path="res://فرتور/ocean09.png" id="14_6mfnk"]
-[ext_resource type="Texture2D" uid="uid://orvwiqtpwt2w" path="res://فرتور/ocean10.png" id="15_x5i7t"]
-[ext_resource type="Texture2D" uid="uid://bnc7ovmoyl6yd" path="res://فرتور/ocean11.png" id="16_2p7qa"]
-[ext_resource type="Texture2D" uid="uid://d3absrumr2sk0" path="res://فرتور/ocean12.png" id="17_3jd85"]
-[ext_resource type="Texture2D" uid="uid://bd1y68q5fmr1" path="res://فرتور/ocean13.png" id="18_kp7ls"]
-[ext_resource type="Texture2D" uid="uid://36qlhfv828aa" path="res://فرتور/ocean14.png" id="19_da714"]
-[ext_resource type="Texture2D" uid="uid://cilx1b6mqmxx2" path="res://فرتور/ocean15.png" id="20_gnghc"]
-[ext_resource type="Texture2D" uid="uid://bcymptjj2l6xw" path="res://فرتور/ocean16.png" id="21_xwoyk"]
+[ext_resource type="Texture2D" uid="uid://qloocjrith3x" path="res://فرتوران/ocean01.png" id="6_icgkd"]
+[ext_resource type="Texture2D" uid="uid://bql6hcpna5ild" path="res://فرتوران/ocean02.png" id="7_4g4ip"]
+[ext_resource type="Texture2D" uid="uid://cego4aw5ih4s6" path="res://فرتوران/ocean03.png" id="8_3dl32"]
+[ext_resource type="Texture2D" uid="uid://4x5m06olpett" path="res://فرتوران/ocean04.png" id="9_mnj42"]
+[ext_resource type="Texture2D" uid="uid://b6bsyc2xt18g0" path="res://فرتوران/ocean05.png" id="10_dgsgv"]
+[ext_resource type="Texture2D" uid="uid://c7dnb5amxnbu7" path="res://فرتوران/ocean06.png" id="11_v40f3"]
+[ext_resource type="Texture2D" uid="uid://le0xmug0c3kv" path="res://فرتوران/ocean07.png" id="12_y47hh"]
+[ext_resource type="Texture2D" uid="uid://sauytlf7c7g1" path="res://فرتوران/ocean08.png" id="13_3vsik"]
+[ext_resource type="Texture2D" uid="uid://ggfxxbysmji0" path="res://فرتوران/ocean09.png" id="14_6mfnk"]
+[ext_resource type="Texture2D" uid="uid://orvwiqtpwt2w" path="res://فرتوران/ocean10.png" id="15_x5i7t"]
+[ext_resource type="Texture2D" uid="uid://bnc7ovmoyl6yd" path="res://فرتوران/ocean11.png" id="16_2p7qa"]
+[ext_resource type="Texture2D" uid="uid://d3absrumr2sk0" path="res://فرتوران/ocean12.png" id="17_3jd85"]
+[ext_resource type="Texture2D" uid="uid://bd1y68q5fmr1" path="res://فرتوران/ocean13.png" id="18_kp7ls"]
+[ext_resource type="Texture2D" uid="uid://36qlhfv828aa" path="res://فرتوران/ocean14.png" id="19_da714"]
+[ext_resource type="Texture2D" uid="uid://cilx1b6mqmxx2" path="res://فرتوران/ocean15.png" id="20_gnghc"]
+[ext_resource type="Texture2D" uid="uid://bcymptjj2l6xw" path="res://فرتوران/ocean16.png" id="21_xwoyk"]
 [ext_resource type="PackedScene" uid="uid://dqxkvcepuv835" path="res://صحنه‌ها/ایستاده.tscn" id="22_4g4ip"]
+[ext_resource type="Texture2D" uid="uid://brx2nw5p40mel" path="res://فرتوران/cross.png" id="22_dgsgv"]
+[ext_resource type="Texture2D" uid="uid://bgbfhcbu6ho5e" path="res://فرتوران/minus.png" id="23_v40f3"]
+[ext_resource type="Texture2D" uid="uid://db6milwvcqit3" path="res://فرتوران/floating-point.png" id="23_y47hh"]
+[ext_resource type="Texture2D" uid="uid://2okcqp0pfqjs" path="res://فرتوران/checkmark.png" id="24_y47hh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k2lne"]
 animations = [{
@@ -235,22 +239,29 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 128
 theme_override_styles/normal = SubResource("StyleBoxFlat_r6x4i")
-text = "❌"
+icon = ExtResource("22_dgsgv")
+icon_alignment = 1
+expand_icon = true
 
 [node name="٫" type="Button" parent="تخته‌کلید/۰"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 128
 theme_override_styles/normal = SubResource("StyleBoxFlat_r6x4i")
-text = "٫"
+icon = ExtResource("23_y47hh")
+icon_alignment = 1
+expand_icon = true
 
 [node name="-" type="Button" parent="تخته‌کلید/۰"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 128
 theme_override_styles/normal = SubResource("StyleBoxFlat_r6x4i")
-text = "−
+text = "
 "
+icon = ExtResource("23_v40f3")
+icon_alignment = 1
+expand_icon = true
 
 [node name="۰" type="Button" parent="تخته‌کلید/۰"]
 layout_mode = 2
@@ -264,7 +275,9 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 128
 theme_override_styles/normal = SubResource("StyleBoxFlat_r6x4i")
-text = "‍✅✔️"
+icon = ExtResource("24_y47hh")
+icon_alignment = 1
+expand_icon = true
 
 [node name="شمارشگر" type="Timer" parent="."]
 wait_time = 2.5
