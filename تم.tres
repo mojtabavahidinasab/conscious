@@ -1,6 +1,10 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://ckmf8v6was3nc"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://ckmf8v6was3nc"]
 
 [ext_resource type="FontFile" uid="uid://be3fsxd0uyh7k" path="res://دبیره‌ها/Amiri-Regular.ttf" id="2_5lfgg"]
+[ext_resource type="Texture2D" uid="uid://dismai0e6hc31" path="res://فرتوران/left.png" id="2_n2n3n"]
+[ext_resource type="Texture2D" uid="uid://cw5fmao4fqd3n" path="res://فرتوران/right.png" id="3_g5k8l"]
+[ext_resource type="Texture2D" uid="uid://c6mlp37ettqn8" path="res://فرتوران/up.png" id="4_lg46p"]
+[ext_resource type="Texture2D" uid="uid://dj413cfcdltbx" path="res://فرتوران/down.png" id="5_vqu2y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5lfgg"]
 bg_color = Color(0, 0, 0, 1)
@@ -47,6 +51,8 @@ Button/styles/focus = null
 Button/styles/hover = null
 Button/styles/normal = SubResource("StyleBoxFlat_5lfgg")
 Button/styles/pressed = SubResource("StyleBoxFlat_5lfgg")
+HScrollBar/icons/decrement = ExtResource("2_n2n3n")
+HScrollBar/icons/increment = ExtResource("3_g5k8l")
 Label/colors/font_color = Color(1, 1, 1, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 0)
 Label/colors/font_shadow_color = Color(0, 0, 0, 0)
@@ -60,3 +66,5 @@ Label/fonts/font = ExtResource("2_5lfgg")
 Label/styles/normal = SubResource("StyleBoxFlat_bp7ku")
 TabContainer/styles/tab_focus = SubResource("StyleBoxFlat_gpdqu")
 TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_g5k8l")
+VScrollBar/icons/decrement = ExtResource("4_lg46p")
+VScrollBar/icons/increment = ExtResource("5_vqu2y")
