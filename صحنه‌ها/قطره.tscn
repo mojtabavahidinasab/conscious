@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://68c005swwops"]
 
-[ext_resource type="Texture2D" uid="uid://ckui6sag0gauy" path="res://فرتور/message_round_blue.png" id="1_lt4mo"]
+[ext_resource type="Texture2D" uid="uid://ckui6sag0gauy" path="res://فرتوران/message_round_blue.png" id="1_lt4mo"]
 [ext_resource type="Script" uid="uid://donljolce7t13" path="res://فردادان/قطره.gd" id="1_xn17y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xn17y"]
