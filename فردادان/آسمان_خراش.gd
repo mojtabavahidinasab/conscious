@@ -5,6 +5,7 @@ var تلاش‌ها = 7
 var فرصت‌ها = 5
 var نمونه‌فرصت‌ها = []
 var اندازه‌فرصت = Vector2(110, 110)
+var طبقه_آینه = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -39,6 +40,9 @@ func بساز(شمارطبقات):
 		var نمونه = طبقه.instantiate()
 		نمونه.position = $دوربین.position - Vector2(0, get_parent_area_size()[1] / 2)
 		نمونه.connect("تماس", حرکت_دوربین.bind(نمونه))
+		if طبقه_آینه:
+			نمونه.get_node("ریخت").flip_h = true
+		طبقه_آینه = not طبقه_آینه
 		add_child(نمونه)
 		$"شمارشگر".timeout.disconnect(بساز)
 		$شمارشگر.timeout.connect(بساز.bind(شمارطبقات - 1))
