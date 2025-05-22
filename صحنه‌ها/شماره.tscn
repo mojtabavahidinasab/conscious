@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://b75u4y43hgfr6"]
+
+[ext_resource type="PackedScene" uid="uid://jkpxqgqjbuk7" path="res://صحنه‌ها/آوا.tscn" id="1_p2tj0"]
+[ext_resource type="Theme" uid="uid://ckmf8v6was3nc" path="res://تم.tres" id="1_q31kc"]
+[ext_resource type="Script" uid="uid://c304olqqmq4wd" path="res://فردادان/شماره.gd" id="1_uym3v"]
+[ext_resource type="PackedScene" uid="uid://dqxkvcepuv835" path="res://صحنه‌ها/ایستاده.tscn" id="2_uym3v"]
+[ext_resource type="PackedScene" uid="uid://cmv5qev6nmt2q" path="res://صحنه‌ها/سر.tscn" id="3_n5cu2"]
+[ext_resource type="PackedScene" uid="uid://cdmbamtpgxqn3" path="res://صحنه‌ها/شمارش_آغازبازی.tscn" id="4_q31kc"]
+[ext_resource type="PackedScene" uid="uid://byaklih7b1iec" path="res://صحنه‌ها/تخته‌کلید.tscn" id="7_vyse7"]
+
+[node name="شماره" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_q31kc")
+script = ExtResource("1_uym3v")
+
+[node name="آوا" parent="." instance=ExtResource("1_p2tj0")]
+
+[node name="ایستاده" parent="." instance=ExtResource("2_uym3v")]
+layout_mode = 1
+
+[node name="سر" parent="." instance=ExtResource("3_n5cu2")]
+layout_mode = 1
+
+[node name="شمارش" parent="." instance=ExtResource("4_q31kc")]
+layout_mode = 1
+
+[node name="برچسب" type="Label" parent="."]
+process_mode = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 66
+
+[node name="شمارشگر" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="تخته‌کلید" parent="." instance=ExtResource("7_vyse7")]
+layout_mode = 1
+offset_left = 1.0
+offset_top = 829.0
+offset_right = 1.0
+offset_bottom = 1959.0
+
+[node name="شمارشگردرست" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[connection signal="timeout" from="شمارشگر" to="." method="صبر"]
+[connection signal="timeout" from="شمارشگردرست" to="." method="پیشروی"]

@@ -14,6 +14,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("1_4ng2d")
+theme_type_variation = &"پیش‌فرض"
 script = ExtResource("2_q8cep")
 
 [node name="نگهدارنده" type="TabContainer" parent="."]
@@ -131,6 +132,10 @@ text = "🚧"
 layout_mode = 2
 size_flags_horizontal = 3
 text = "🚧"
+
+[node name="شماره" type="Button" parent="نگهدارنده/بازی‌ها/بخش‌ها/حافظه"]
+layout_mode = 2
+text = "شماره"
 
 [node name="برچسب انعطاف‌پذیری" type="Label" parent="نگهدارنده/بازی‌ها/بخش‌ها"]
 layout_mode = 2
@@ -387,6 +392,7 @@ metadata/_tab_index = 3
 [connection signal="pressed" from="نگهدارنده/بازی‌ها/بخش‌ها/حافظه/تصویری" to="." method="آغازبازی" binds= ["res://صحنه‌ها/تصویری.tscn"]]
 [connection signal="pressed" from="نگهدارنده/بازی‌ها/بخش‌ها/حافظه/MemoryMatchOverdrive" to="." method="آغازبازی"]
 [connection signal="pressed" from="نگهدارنده/بازی‌ها/بخش‌ها/حافظه/MemoryMatch" to="." method="آغازبازی"]
+[connection signal="pressed" from="نگهدارنده/بازی‌ها/بخش‌ها/حافظه/شماره" to="." method="آغازبازی" binds= ["res://صحنه‌ها/شماره.tscn"]]
 [connection signal="pressed" from="نگهدارنده/بازی‌ها/بخش‌ها/انعطاف‌پذیری/صورت فلکی" to="." method="آغازبازی"]
 [connection signal="pressed" from="نگهدارنده/بازی‌ها/بخش‌ها/انعطاف‌پذیری/رود برگ" to="." method="آغازبازی"]
 [connection signal="pressed" from="نگهدارنده/بازی‌ها/بخش‌ها/انعطاف‌پذیری/افقی عمودی" to="." method="آغازبازی"]
