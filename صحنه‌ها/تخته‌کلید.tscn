@@ -1,0 +1,175 @@
+[gd_scene load_steps=10 format=3 uid="uid://byaklih7b1iec"]
+
+[ext_resource type="Texture2D" uid="uid://brx2nw5p40mel" path="res://فرتوران/cross.png" id="1_1l1a2"]
+[ext_resource type="Theme" uid="uid://ckmf8v6was3nc" path="res://تم.tres" id="1_bns1v"]
+[ext_resource type="Texture2D" uid="uid://db6milwvcqit3" path="res://فرتوران/floating-point.png" id="2_bns1v"]
+[ext_resource type="Script" uid="uid://bukpn0w82e4fl" path="res://فردادان/تخته‌کلید.gd" id="2_ex4er"]
+[ext_resource type="Texture2D" uid="uid://bgbfhcbu6ho5e" path="res://فرتوران/minus.png" id="3_ex4er"]
+[ext_resource type="Texture2D" uid="uid://2okcqp0pfqjs" path="res://فرتوران/checkmark.png" id="4_6fjrv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jfys7"]
+bg_color = Color(0, 0, 0, 0.490196)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r6x4i"]
+bg_color = Color(0, 0, 0, 0.490196)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dlfgb"]
+bg_color = Color(0, 0, 0, 0.490196)
+
+[node name="تخته‌کلید" type="VBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1130.0
+grow_horizontal = 2
+scale = Vector2(1, 0.4)
+theme = ExtResource("1_bns1v")
+theme_type_variation = &"تخته‌کلید"
+theme_override_constants/separation = 0
+script = ExtResource("2_ex4er")
+
+[node name="نوشتار" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_jfys7")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+text_direction = 1
+
+[node name="۷۸۹" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="۷" type="Button" parent="۷۸۹"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6x4i")
+text = "۷"
+
+[node name="۸" type="Button" parent="۷۸۹"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_dlfgb")
+text = "۸"
+
+[node name="۹" type="Button" parent="۷۸۹"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_dlfgb")
+text = "۹"
+
+[node name="۴۵۶" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="۴" type="Button" parent="۴۵۶"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6x4i")
+text = "۴"
+
+[node name="۵" type="Button" parent="۴۵۶"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6x4i")
+text = "۵"
+
+[node name="۶" type="Button" parent="۴۵۶"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6x4i")
+text = "۶"
+
+[node name="۱۲۳" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="۱" type="Button" parent="۱۲۳"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6x4i")
+text = "۱"
+
+[node name="۲" type="Button" parent="۱۲۳"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6x4i")
+text = "۲"
+
+[node name="۳" type="Button" parent="۱۲۳"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6x4i")
+text = "۳"
+
+[node name="۰" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="۰" type="Button" parent="۰"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6x4i")
+text = "۰"
+
+[node name="❌" type="Button" parent="۰"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6x4i")
+icon = ExtResource("1_1l1a2")
+icon_alignment = 1
+expand_icon = true
+
+[node name="٫" type="Button" parent="۰"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6x4i")
+icon = ExtResource("2_bns1v")
+icon_alignment = 1
+expand_icon = true
+
+[node name="-" type="Button" parent="۰"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6x4i")
+text = "
+"
+icon = ExtResource("3_ex4er")
+icon_alignment = 1
+expand_icon = true
+
+[node name="✔️" type="Button" parent="۰"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_r6x4i")
+icon = ExtResource("4_6fjrv")
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="۷۸۹/۷" to="." method="بنویس" binds= [7]]
+[connection signal="pressed" from="۷۸۹/۸" to="." method="بنویس" binds= [8]]
+[connection signal="pressed" from="۷۸۹/۹" to="." method="بنویس" binds= [9]]
+[connection signal="pressed" from="۴۵۶/۴" to="." method="بنویس" binds= [4]]
+[connection signal="pressed" from="۴۵۶/۵" to="." method="بنویس" binds= [5]]
+[connection signal="pressed" from="۴۵۶/۶" to="." method="بنویس" binds= [6]]
+[connection signal="pressed" from="۱۲۳/۱" to="." method="بنویس" binds= [1]]
+[connection signal="pressed" from="۱۲۳/۲" to="." method="بنویس" binds= [2]]
+[connection signal="pressed" from="۱۲۳/۳" to="." method="بنویس" binds= [3]]
+[connection signal="pressed" from="۰/۰" to="." method="بنویس" binds= [0]]
+[connection signal="pressed" from="۰/❌" to="." method="پاک‌کن"]
+[connection signal="pressed" from="۰/٫" to="." method="اعشاربده"]
+[connection signal="pressed" from="۰/-" to="." method="علامت_بده"]
