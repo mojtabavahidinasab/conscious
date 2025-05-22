@@ -90,7 +90,6 @@ one_shot = true
 [node name="آوا" parent="." instance=ExtResource("5_iuect")]
 
 [node name="شمارش" parent="." instance=ExtResource("6_tnolh")]
-process_mode = 2
 layout_mode = 1
 
 [connection signal="pressed" from="پا/خیر" to="." method="پیشروی" binds= [false]]

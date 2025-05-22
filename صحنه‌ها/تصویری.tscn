@@ -373,7 +373,6 @@ autostart = true
 [node name="آوا" parent="." instance=ExtResource("5_5w30p")]
 
 [node name="شمارش" parent="." instance=ExtResource("6_pysph")]
-process_mode = 2
 layout_mode = 1
 
 [connection signal="timeout" from="شمارشگر" to="." method="پایان_نمایش"]

@@ -19,4 +19,4 @@ func _ready():
 
 
 func _process(delta: float):
-	text = پارسی‌سازی.شماره_پارسی(int($"شمارشگرآغاز".time_left))
+	text = پارسی‌سازی.شماره_پارسی(str(int($"شمارشگرآغاز".time_left)))
