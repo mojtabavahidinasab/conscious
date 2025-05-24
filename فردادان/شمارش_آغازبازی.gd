@@ -10,6 +10,7 @@ func آغازبازی():
 
 
 func _ready():
+	theme = بازی.سبک
 	get_tree().paused = true
 	if بازی‌ساز:
 		آغازبازی()

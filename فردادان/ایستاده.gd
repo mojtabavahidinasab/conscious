@@ -1,6 +1,10 @@
 extends VBoxContainer
 
 
+func _ready():
+	theme = بازی.سبک
+
+
 func ادامه_بازی(چیزها: Array):
 	$آوا.سردادن("دکمه")
 	for چیز in چیزها:

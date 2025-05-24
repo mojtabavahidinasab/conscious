@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cdmbamtpgxqn3"]
 
-[ext_resource type="Theme" uid="uid://ckmf8v6was3nc" path="res://تم.tres" id="1_1foy0"]
+[ext_resource type="Theme" uid="uid://ckmf8v6was3nc" path="res://سبک‌ها/آفتاب.tres" id="1_1foy0"]
 [ext_resource type="Script" uid="uid://df12ayiwrbfy2" path="res://فردادان/شمارش_آغازبازی.gd" id="2_intdy"]
 [ext_resource type="PackedScene" uid="uid://jkpxqgqjbuk7" path="res://صحنه‌ها/آوا.tscn" id="3_hn2pu"]
 

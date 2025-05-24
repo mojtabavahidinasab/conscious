@@ -18,10 +18,12 @@ extends Control
 
 ## نام این تابع یک واژه کلیدی می‌باشد برای همین نمی‌توان نامی فارسی جایگزین آن نمود.
 func _ready():
+	theme = بازی.سبک
 	# راست‌چین کردن اجباری
-	for بازی in $"سربرگ‌ها/بازی‌ها/بخش‌ها".get_children():
-		if بازی is ScrollContainer:
-			بازی.scroll_horizontal = 610
+	for بخش in $"بازی‌ها/بخش‌ها".get_children():
+		for بازی in بخش.get_children():
+			if بازی is ScrollContainer:
+				بازی.scroll_horizontal = 99999
 
 
 ## این تابع آغازگر بازی برگزیده بازیکن است.
@@ -33,3 +35,25 @@ func آغازبازی(بازی = null):
 	$آوا.سردادن("دکمه")
 	if بازی:
 		get_tree().change_scene_to_file(بازی)
+
+
+func نمایش‌بخش(بخش: String):
+	$آوا.سردادن("دکمه")
+	for هربخش in get_children():
+		if هربخش is ScrollContainer:
+			if هربخش.name == بخش:
+				هربخش.show()
+			else:
+				هربخش.hide()
+
+
+func تغییرسبک(اندیس: int):
+	$آوا.سردادن("آغازبازی")
+	if اندیس == 0:
+		RenderingServer.set_default_clear_color(Color.WHITE)
+		بازی.سبک = preload("res://سبک‌ها/آفتاب.tres")  # آفتاب
+		theme = بازی.سبک
+	elif اندیس == 1:
+		RenderingServer.set_default_clear_color(Color.BLACK)
+		بازی.سبک = preload("res://سبک‌ها/مهتاب.tres")  # مهتاب
+		theme = بازی.سبک

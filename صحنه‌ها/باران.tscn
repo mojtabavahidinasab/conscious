@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=3 uid="uid://jlkupge2q7lw"]
 
-[ext_resource type="Theme" uid="uid://ckmf8v6was3nc" path="res://تم.tres" id="1_5fqva"]
+[ext_resource type="Theme" uid="uid://ckmf8v6was3nc" path="res://سبک‌ها/آفتاب.tres" id="1_5fqva"]
 [ext_resource type="Script" uid="uid://tyl4nxtkjbvb" path="res://فردادان/باران.gd" id="2_agb8n"]
 [ext_resource type="PackedScene" uid="uid://68c005swwops" path="res://صحنه‌ها/قطره.tscn" id="3_agb8n"]
 [ext_resource type="PackedScene" uid="uid://cmv5qev6nmt2q" path="res://صحنه‌ها/سر.tscn" id="4_icgkd"]

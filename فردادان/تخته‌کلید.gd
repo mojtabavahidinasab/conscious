@@ -3,6 +3,10 @@ class_name تخته‌کلید
 var نوشتار: String
 
 
+func _ready():
+	theme = بازی.سبک
+
+
 func اعشاربده():
 	if "." in نوشتار:
 		نوشتار[نوشتار.find(".")] = ""

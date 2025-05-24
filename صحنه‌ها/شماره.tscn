@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://b75u4y43hgfr6"]
 
 [ext_resource type="PackedScene" uid="uid://jkpxqgqjbuk7" path="res://صحنه‌ها/آوا.tscn" id="1_p2tj0"]
-[ext_resource type="Theme" uid="uid://ckmf8v6was3nc" path="res://تم.tres" id="1_q31kc"]
+[ext_resource type="Theme" uid="uid://ckmf8v6was3nc" path="res://سبک‌ها/آفتاب.tres" id="1_q31kc"]
 [ext_resource type="Script" uid="uid://c304olqqmq4wd" path="res://فردادان/شماره.gd" id="1_uym3v"]
 [ext_resource type="PackedScene" uid="uid://dqxkvcepuv835" path="res://صحنه‌ها/ایستاده.tscn" id="2_uym3v"]
 [ext_resource type="PackedScene" uid="uid://cmv5qev6nmt2q" path="res://صحنه‌ها/سر.tscn" id="3_n5cu2"]

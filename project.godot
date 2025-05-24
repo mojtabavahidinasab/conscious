@@ -14,9 +14,10 @@ config/name="conscious"
 config/name_localized={
 "fa": "هوشیار"
 }
-config/version="v0.0.3"
+config/version="0.0.4"
 run/main_scene="uid://bdmrrn0dwuxem"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+boot_splash/bg_color=Color(1, 1, 1, 1)
 boot_splash/show_image=false
 config/icon="res://icon.svg"
 run/size/mode=3
@@ -38,3 +39,4 @@ locale/fallback="fa_Arab_IR"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(1, 1, 1, 1)

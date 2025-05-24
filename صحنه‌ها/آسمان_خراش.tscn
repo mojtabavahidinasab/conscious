@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bs0iulq0ujois"]
 
 [ext_resource type="Script" uid="uid://cp3gxkof6ejha" path="res://فردادان/آسمان_خراش.gd" id="1_jhp5b"]
-[ext_resource type="Theme" uid="uid://ckmf8v6was3nc" path="res://تم.tres" id="1_p8hvl"]
+[ext_resource type="Theme" uid="uid://ckmf8v6was3nc" path="res://سبک‌ها/آفتاب.tres" id="1_p8hvl"]
 [ext_resource type="PackedScene" uid="uid://gdinkoe34vyv" path="res://صحنه‌ها/طبقه_ازپیش_ساخته.tscn" id="2_0w1wu"]
 [ext_resource type="PackedScene" uid="uid://cmv5qev6nmt2q" path="res://صحنه‌ها/سر.tscn" id="2_d5uhe"]
 [ext_resource type="PackedScene" uid="uid://dqxkvcepuv835" path="res://صحنه‌ها/ایستاده.tscn" id="3_0w1wu"]

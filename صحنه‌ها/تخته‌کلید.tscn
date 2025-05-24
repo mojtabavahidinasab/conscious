@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://byaklih7b1iec"]
 
 [ext_resource type="Texture2D" uid="uid://brx2nw5p40mel" path="res://فرتوران/cross.png" id="1_1l1a2"]
-[ext_resource type="Theme" uid="uid://ckmf8v6was3nc" path="res://تم.tres" id="1_bns1v"]
+[ext_resource type="Theme" uid="uid://ckmf8v6was3nc" path="res://سبک‌ها/آفتاب.tres" id="1_bns1v"]
 [ext_resource type="Texture2D" uid="uid://db6milwvcqit3" path="res://فرتوران/floating-point.png" id="2_bns1v"]
 [ext_resource type="Script" uid="uid://bukpn0w82e4fl" path="res://فردادان/تخته‌کلید.gd" id="2_ex4er"]
 [ext_resource type="Texture2D" uid="uid://bgbfhcbu6ho5e" path="res://فرتوران/minus.png" id="3_ex4er"]

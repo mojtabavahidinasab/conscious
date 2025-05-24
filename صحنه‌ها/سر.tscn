@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cmv5qev6nmt2q"]
 
-[ext_resource type="Theme" uid="uid://ckmf8v6was3nc" path="res://تم.tres" id="1_gre0g"]
+[ext_resource type="Theme" uid="uid://ckmf8v6was3nc" path="res://سبک‌ها/آفتاب.tres" id="1_gre0g"]
 [ext_resource type="Script" uid="uid://cvdqkeyid7jsb" path="res://فردادان/سر.gd" id="2_da31m"]
 [ext_resource type="PackedScene" uid="uid://jkpxqgqjbuk7" path="res://صحنه‌ها/آوا.tscn" id="3_eywgq"]
 
