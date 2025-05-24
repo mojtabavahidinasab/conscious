@@ -5,8 +5,9 @@
 
 
 ## درباره
-![آفتاب](https://bayanbox.ir/view/7315322995791869504/Screenshot-2025-05-24-07-37-32-504-com.example.conscious.jpg)
-![مهتاب](https://bayanbox.ir/view/9092189637684755864/Screenshot-2025-05-24-07-37-43-881-com.example.conscious.jpg)
+| آفتاب                                                                                                               | مهتاب                                                                                                               |
+| ![آفتاب](https://bayanbox.ir/view/9092189637684755864/Screenshot-2025-05-24-07-37-43-881-com.example.conscious.jpg) | ![مهتاب](https://bayanbox.ir/view/9092189637684755864/Screenshot-2025-05-24-07-37-43-881-com.example.conscious.jpg) |
 
 
-هوشیار قراره جایگزین آزاد و متن‌باز Lumosity باشه. یک مجموعه از بازی‌هایی که هوش آدم رو ورز میده.
+
+هوشیار قراره جایگزین آزاد و متن‌باز Lumosity باشه. مجموعه بازی‌هایی که هوش آدم رو ورز میده.
