@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=5 format=3 uid="uid://rdtqwffm1wu7"]
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://rdtqwffm1wu7"]
 
 [ext_resource type="FontFile" uid="uid://be3fsxd0uyh7k" path="res://دبیره‌ها/Amiri-Regular.ttf" id="1_10t73"]
 
@@ -9,7 +9,28 @@ corner_detail = 20
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7kpru"]
 bg_color = Color(1, 1, 1, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iwfxo"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3mgfm"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxrfq"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eee4g"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_27lge"]
+bg_color = Color(1, 1, 1, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_10t73"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lsrxj"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_idcvy"]
+bg_color = Color(1, 1, 1, 1)
 
 [resource]
 default_font = ExtResource("1_10t73")
@@ -34,4 +55,14 @@ Label/constants/shadow_outline_size = 0
 Label/font_sizes/font_size = 40
 Label/fonts/font = ExtResource("1_10t73")
 OptionButton/colors/font_color = Color(1, 1, 1, 1)
+OptionButton/colors/font_focus_color = Color(0, 0, 0, 1)
+OptionButton/colors/font_hover_color = Color(0, 0, 0, 1)
+OptionButton/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+OptionButton/styles/focus = SubResource("StyleBoxFlat_iwfxo")
+OptionButton/styles/hover = SubResource("StyleBoxFlat_3mgfm")
+OptionButton/styles/hover_mirrored = SubResource("StyleBoxFlat_yxrfq")
+OptionButton/styles/hover_pressed = SubResource("StyleBoxFlat_eee4g")
+OptionButton/styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_27lge")
 OptionButton/styles/normal = SubResource("StyleBoxFlat_10t73")
+OptionButton/styles/pressed = SubResource("StyleBoxFlat_lsrxj")
+OptionButton/styles/pressed_mirrored = SubResource("StyleBoxFlat_idcvy")

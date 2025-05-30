@@ -10,7 +10,7 @@ var طبقه_آینه = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	theme = بازی.سبک
+	theme = بازی.سبک_برگزیده
 	$"سر/ایستاننده".pressed.connect($"سر".بایست.bind(get_children()))
 	$"ایستاده/ادامه".pressed.connect($"ایستاده".ادامه_بازی.bind(get_children()))
 	$"ایستاده/ازنو".pressed.connect($"ایستاده".بازی_ازنو)

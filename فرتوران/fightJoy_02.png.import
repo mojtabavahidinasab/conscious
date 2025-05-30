@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://orvwiqtpwt2w"
-path="res://.godot/imported/ocean10.png-248e812e2a4a815d371278a35d9a8687.ctex"
+uid="uid://deh7ripsot21l"
+path="res://.godot/imported/fightJoy_02.png-620f6c52a263ff8d602383c8133077d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://فرتوران/ocean10.png"
-dest_files=["res://.godot/imported/ocean10.png-248e812e2a4a815d371278a35d9a8687.ctex"]
+source_file="res://فرتوران/fightJoy_02.png"
+dest_files=["res://.godot/imported/fightJoy_02.png-620f6c52a263ff8d602383c8133077d8.ctex"]
 
 [params]
 

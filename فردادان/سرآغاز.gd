@@ -18,7 +18,7 @@ extends Control
 
 ## نام این تابع یک واژه کلیدی می‌باشد برای همین نمی‌توان نامی فارسی جایگزین آن نمود.
 func _ready():
-	theme = بازی.سبک
+	theme = بازی.سبک_برگزیده
 	# راست‌چین کردن اجباری
 	for بخش in $"بازی‌ها/بخش‌ها".get_children():
 		for بازی in بخش.get_children():
@@ -37,6 +37,10 @@ func آغازبازی(بازی = null):
 		get_tree().change_scene_to_file(بازی)
 
 
+func درباره_بازی(درباره: String):
+	pass
+
+
 func نمایش‌بخش(بخش: String):
 	$آوا.سردادن("دکمه")
 	for هربخش in get_children():
@@ -51,9 +55,9 @@ func تغییرسبک(اندیس: int):
 	$آوا.سردادن("آغازبازی")
 	if اندیس == 0:
 		RenderingServer.set_default_clear_color(Color.WHITE)
-		بازی.سبک = preload("res://سبک‌ها/آفتاب.tres")  # آفتاب
-		theme = بازی.سبک
+		بازی.سبک_برگزیده = preload("res://سبک‌ها/آفتاب.tres")  # آفتاب
+		theme = بازی.سبک_برگزیده
 	elif اندیس == 1:
 		RenderingServer.set_default_clear_color(Color.BLACK)
-		بازی.سبک = preload("res://سبک‌ها/مهتاب.tres")  # مهتاب
-		theme = بازی.سبک
+		بازی.سبک_برگزیده = preload("res://سبک‌ها/مهتاب.tres")  # مهتاب
+		theme = بازی.سبک_برگزیده

@@ -51,7 +51,7 @@ func صبر():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	theme = بازی.سبک
+	theme = بازی.سبک_برگزیده
 	$"تخته‌کلید/۰/-".hide()
 	$"تخته‌کلید/۰/٫".hide()
 	$"تخته‌کلید/۰/✔️".pressed.connect(بنویس)

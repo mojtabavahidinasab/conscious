@@ -2,7 +2,7 @@ extends HBoxContainer
 
 
 func _ready():
-	theme = بازی.سبک
+	theme = بازی.سبک_برگزیده
 
 
 func بایست(چیزها: Array):

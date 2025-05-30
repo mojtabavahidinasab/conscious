@@ -4,7 +4,7 @@ var نوشتار: String
 
 
 func _ready():
-	theme = بازی.سبک
+	theme = بازی.سبک_برگزیده
 
 
 func اعشاربده():

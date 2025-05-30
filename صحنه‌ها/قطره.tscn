@@ -1,11 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://68c005swwops"]
+[gd_scene load_steps=6 format=3 uid="uid://68c005swwops"]
 
 [ext_resource type="Texture2D" uid="uid://ckui6sag0gauy" path="res://فرتوران/message_round_blue.png" id="1_lt4mo"]
 [ext_resource type="Script" uid="uid://donljolce7t13" path="res://فردادان/قطره.gd" id="1_xn17y"]
+[ext_resource type="Shader" uid="uid://bpetgde3piqu2" path="res://فردادان/آب.gdshader" id="2_57l8c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xn17y"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q1xxl"]
+shader = ExtResource("2_57l8c")
+shader_parameter/water_color_1 = Color(0.2, 0.6, 0.8, 0.5)
+shader_parameter/water_color_2 = Color(0.1, 0.5, 0.7, 0.4)
+shader_parameter/water_level_percentage = 0.5
+shader_parameter/wave_frequency_1 = 10.0
+shader_parameter/wave_amplitude_1 = 0.05
+shader_parameter/wave_frequency_2 = 15.0
+shader_parameter/wave_amplitude_2 = 0.03
+
 [node name="قطره" type="RigidBody2D"]
+texture_filter = 1
 disable_mode = 2
 gravity_scale = 0.0
 max_contacts_reported = 1
@@ -20,6 +32,7 @@ one_way_collision = true
 one_way_collision_margin = 0.0
 
 [node name="شکل" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_q1xxl")
 position = Vector2(-0.677917, -1.71874)
 scale = Vector2(2.947, 3.291)
 texture = ExtResource("1_lt4mo")

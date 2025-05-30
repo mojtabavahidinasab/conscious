@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://jlkupge2q7lw"]
+[gd_scene load_steps=14 format=3 uid="uid://jlkupge2q7lw"]
 
 [ext_resource type="Theme" uid="uid://ckmf8v6was3nc" path="res://سبک‌ها/آفتاب.tres" id="1_5fqva"]
 [ext_resource type="Script" uid="uid://tyl4nxtkjbvb" path="res://فردادان/باران.gd" id="2_agb8n"]
@@ -6,80 +6,21 @@
 [ext_resource type="PackedScene" uid="uid://cmv5qev6nmt2q" path="res://صحنه‌ها/سر.tscn" id="4_icgkd"]
 [ext_resource type="PackedScene" uid="uid://cdmbamtpgxqn3" path="res://صحنه‌ها/شمارش_آغازبازی.tscn" id="5_4g4ip"]
 [ext_resource type="PackedScene" uid="uid://jkpxqgqjbuk7" path="res://صحنه‌ها/آوا.tscn" id="6_4g4ip"]
-[ext_resource type="Texture2D" uid="uid://qloocjrith3x" path="res://فرتوران/ocean01.png" id="6_icgkd"]
-[ext_resource type="Texture2D" uid="uid://bql6hcpna5ild" path="res://فرتوران/ocean02.png" id="7_4g4ip"]
-[ext_resource type="Texture2D" uid="uid://cego4aw5ih4s6" path="res://فرتوران/ocean03.png" id="8_3dl32"]
-[ext_resource type="Texture2D" uid="uid://4x5m06olpett" path="res://فرتوران/ocean04.png" id="9_mnj42"]
-[ext_resource type="Texture2D" uid="uid://b6bsyc2xt18g0" path="res://فرتوران/ocean05.png" id="10_dgsgv"]
-[ext_resource type="Texture2D" uid="uid://c7dnb5amxnbu7" path="res://فرتوران/ocean06.png" id="11_v40f3"]
-[ext_resource type="Texture2D" uid="uid://le0xmug0c3kv" path="res://فرتوران/ocean07.png" id="12_y47hh"]
-[ext_resource type="Texture2D" uid="uid://sauytlf7c7g1" path="res://فرتوران/ocean08.png" id="13_3vsik"]
-[ext_resource type="Texture2D" uid="uid://ggfxxbysmji0" path="res://فرتوران/ocean09.png" id="14_6mfnk"]
-[ext_resource type="Texture2D" uid="uid://orvwiqtpwt2w" path="res://فرتوران/ocean10.png" id="15_x5i7t"]
-[ext_resource type="Texture2D" uid="uid://bnc7ovmoyl6yd" path="res://فرتوران/ocean11.png" id="16_2p7qa"]
-[ext_resource type="Texture2D" uid="uid://d3absrumr2sk0" path="res://فرتوران/ocean12.png" id="17_3jd85"]
-[ext_resource type="Texture2D" uid="uid://bd1y68q5fmr1" path="res://فرتوران/ocean13.png" id="18_kp7ls"]
-[ext_resource type="Texture2D" uid="uid://36qlhfv828aa" path="res://فرتوران/ocean14.png" id="19_da714"]
-[ext_resource type="Texture2D" uid="uid://cilx1b6mqmxx2" path="res://فرتوران/ocean15.png" id="20_gnghc"]
-[ext_resource type="Texture2D" uid="uid://bcymptjj2l6xw" path="res://فرتوران/ocean16.png" id="21_xwoyk"]
+[ext_resource type="Shader" uid="uid://bpetgde3piqu2" path="res://فردادان/آب.gdshader" id="6_mnj42"]
 [ext_resource type="PackedScene" uid="uid://byaklih7b1iec" path="res://صحنه‌ها/تخته‌کلید.tscn" id="22_3dl32"]
 [ext_resource type="PackedScene" uid="uid://dqxkvcepuv835" path="res://صحنه‌ها/ایستاده.tscn" id="22_4g4ip"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_k2lne"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_icgkd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_4g4ip")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_3dl32")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_mnj42")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_dgsgv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_v40f3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_y47hh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_3vsik")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_6mfnk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_x5i7t")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_2p7qa")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_3jd85")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_kp7ls")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_da714")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_gnghc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_xwoyk")
-}],
-"loop": true,
-"name": &"default",
-"speed": 10.0
-}]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dd6bo"]
+shader = ExtResource("6_mnj42")
+shader_parameter/water_color_1 = Color(0.2, 0.6, 1, 1)
+shader_parameter/water_color_2 = Color(0.1, 0.5, 0.7, 0.4)
+shader_parameter/water_level_percentage = 0.876
+shader_parameter/wave_frequency_1 = 10.0
+shader_parameter/wave_amplitude_1 = 0.05
+shader_parameter/wave_frequency_2 = 15.0
+shader_parameter/wave_amplitude_2 = 0.03
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_dd6bo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b056l"]
 size = Vector2(724.73, 161.498)
@@ -112,11 +53,11 @@ layout_mode = 1
 [node name="آب" type="Area2D" parent="."]
 position = Vector2(0, 1181.19)
 
-[node name="پویانمایی" type="AnimatedSprite2D" parent="آب"]
-position = Vector2(359.966, 17.8025)
-scale = Vector2(22.498, 5.06317)
-sprite_frames = SubResource("SpriteFrames_k2lne")
-frame_progress = 0.911628
+[node name="Sprite2D" type="Sprite2D" parent="آب"]
+material = SubResource("ShaderMaterial_dd6bo")
+position = Vector2(361.25, 21.3101)
+scale = Vector2(723.5, 171)
+texture = SubResource("CanvasTexture_dd6bo")
 
 [node name="پوسته" type="CollisionShape2D" parent="آب"]
 position = Vector2(359.961, 17.8247)

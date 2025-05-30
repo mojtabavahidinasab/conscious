@@ -2,7 +2,7 @@ extends VBoxContainer
 
 
 func _ready():
-	theme = بازی.سبک
+	theme = بازی.سبک_برگزیده
 
 
 func ادامه_بازی(چیزها: Array):
