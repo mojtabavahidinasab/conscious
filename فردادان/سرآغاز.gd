@@ -18,6 +18,15 @@ extends Control
 
 ## نام این تابع یک واژه کلیدی می‌باشد برای همین نمی‌توان نامی فارسی جایگزین آن نمود.
 func _ready():
+	var پرونده_پیکربندی: FileAccess = FileAccess.open("user://{0}".format([بازی.نام_پرونده_پیکربندی]), FileAccess.READ)
+	if پرونده_پیکربندی:
+		var پیکربندی = پرونده_پیکربندی.get_as_text(true).replace("\n", "").split(",")
+		if پیکربندی.has("سبک"):
+			if پیکربندی[پیکربندی.find("سبک") + 1] == "آفتاب":
+				تغییرسبک(0)
+			elif پیکربندی[پیکربندی.find("سبک") + 1] == "مهتاب":
+				تغییرسبک(1)
+				$"پیکربندی/بخش‌ها/سبک/گزینه‌ها".select(1)
 	theme = بازی.سبک_برگزیده
 	# راست‌چین کردن اجباری
 	for بخش in $"بازی‌ها/بخش‌ها".get_children():
@@ -53,11 +62,29 @@ func نمایش‌بخش(بخش: String):
 
 func تغییرسبک(اندیس: int):
 	$آوا.سردادن("آغازبازی")
+	var پرونده_پیکربندی: FileAccess = FileAccess.open("user://{0}".format([بازی.نام_پرونده_پیکربندی]), FileAccess.READ_WRITE)
+	var پیکربندی: PackedStringArray
+	if پرونده_پیکربندی:
+		پیکربندی = پرونده_پیکربندی.get_as_text(true).replace("\n", "").split(",")
+	else:
+		پرونده_پیکربندی = FileAccess.open("user://{0}".format([بازی.نام_پرونده_پیکربندی]), FileAccess.WRITE)
 	if اندیس == 0:
 		RenderingServer.set_default_clear_color(Color.WHITE)
-		بازی.سبک_برگزیده = preload("res://سبک‌ها/آفتاب.tres")  # آفتاب
+		بازی.سبک_برگزیده = preload(بازی.سبک_آفتاب)  # آفتاب
 		theme = بازی.سبک_برگزیده
+		if پیکربندی.has("سبک"):
+			پیکربندی[پیکربندی.find("سبک") + 1] = "آفتاب"
+		else:
+			پیکربندی.append("سبک")
+			پیکربندی.append("آفتاب")
 	elif اندیس == 1:
 		RenderingServer.set_default_clear_color(Color.BLACK)
-		بازی.سبک_برگزیده = preload("res://سبک‌ها/مهتاب.tres")  # مهتاب
+		بازی.سبک_برگزیده = preload(بازی.سبک_مهتاب)  # مهتاب
 		theme = بازی.سبک_برگزیده
+		if پیکربندی.has("سبک"):
+			پیکربندی[پیکربندی.find("سبک") + 1] = "مهتاب"
+		else:
+			پیکربندی.append("سبک")
+			پیکربندی.append("مهتاب")
+	var موقت :String = ",".join(پیکربندی)
+	پرونده_پیکربندی.store_string(موقت)

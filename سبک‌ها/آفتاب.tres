@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://ckmf8v6was3nc"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://ckmf8v6was3nc"]
 
 [ext_resource type="FontFile" uid="uid://be3fsxd0uyh7k" path="res://دبیره‌ها/Amiri-Regular.ttf" id="1_4fuki"]
 
@@ -13,6 +13,9 @@ corner_detail = 20
 bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_022cj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y7vmb"]
+bg_color = Color(0.374989, 0.18262, 0, 1)
 
 [resource]
 default_font = ExtResource("1_4fuki")
@@ -38,3 +41,4 @@ Label/fonts/font = ExtResource("1_4fuki")
 OptionButton/colors/font_color = Color(0, 0, 0, 1)
 OptionButton/colors/font_focus_color = Color(1, 1, 1, 1)
 OptionButton/styles/normal = SubResource("StyleBoxFlat_022cj")
+Panel/styles/panel = SubResource("StyleBoxFlat_y7vmb")

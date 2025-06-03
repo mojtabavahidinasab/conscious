@@ -6,7 +6,6 @@ extends Control
 ##
 ## @tutorial:             https://github.com/mojtabavahidinasab/conscious/TODO
 
-var امتیاز = 0
 var تلاش‌ها = 5
 
 var بعدها = 5
@@ -20,6 +19,7 @@ var برگزیدگان_بازیکن = 0
 
 ## نام این تابع یک واژه کلیدی می‌باشد برای همین نمی‌توان نامی فارسی جایگزین آن نمود.
 func _ready():
+	بازی.امتیاز = 0
 	theme = بازی.سبک_برگزیده
 	تلاش‌ها = 5
 	$"سر/ایستاننده".pressed.connect($"سر".بایست.bind(get_children()))
@@ -29,6 +29,7 @@ func _ready():
 	for سطر in range(1, بعدها + 1):
 		for ستون in range(1, بعدها + 1):
 			get_node("تن/{0}/{1}".format([سطر, ستون])).pressed.connect(پیشروی.bind([سطر, ستون]))
+	await $"شمارش".آغاز
 	نمایش()
 
 
@@ -50,7 +51,6 @@ func پایان_بازی():
 	$ایستاده.show()
 	$سر.hide()
 	$تن.hide()
-	$ایستاده/امتیاز.text = str(امتیاز)
 	get_tree().paused = true
 
 
@@ -189,9 +189,7 @@ func پیشروی(متغیر: Array):
 							get_node("تن/{0}/{1}".format([هرسطر, هرستون])).size_flags_horizontal = SIZE_EXPAND_FILL
 							get_node("تن/{0}/{1}".format([هرسطر, هرستون])).size_flags_vertical = SIZE_EXPAND_FILL
 							get_node("تن/{0}/{1}".format([هرسطر, هرستون])).pressed.connect(پیشروی.bind([هرسطر, هرستون]))
-			امتیاز += 1
-			$"سر/امتیاز".text = "امتیاز: {0}".format([پارسی‌سازی.شماره_پارسی(str(امتیاز))])
-			$"ایستاده/امتیاز".text = پارسی‌سازی.شماره_پارسی(str(امتیاز))
+			بازی.امتیاز += 1
 			نمایش()
 		else:
 			if $آوا.stream == preload("res://آواها/نادرست.wav"):

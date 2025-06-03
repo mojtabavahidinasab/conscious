@@ -1,12 +1,14 @@
 extends Label
 class_name آغازبازی
 static var بازی‌ساز: bool = false
+signal آغاز
 
 
 func آغازبازی():
 	$"آوا".سردادن("آغازبازی")
 	hide()
 	get_tree().paused = false
+	آغاز.emit()
 
 
 func _ready():

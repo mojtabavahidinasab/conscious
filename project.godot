@@ -14,7 +14,7 @@ config/name="conscious"
 config/name_localized={
 "fa": "هوشیار"
 }
-config/version="0.0.5"
+config/version="0.0.6"
 run/main_scene="uid://bdmrrn0dwuxem"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/bg_color=Color(1, 1, 1, 1)

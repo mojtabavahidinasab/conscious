@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=12 format=3 uid="uid://rdtqwffm1wu7"]
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://rdtqwffm1wu7"]
 
 [ext_resource type="FontFile" uid="uid://be3fsxd0uyh7k" path="res://دبیره‌ها/Amiri-Regular.ttf" id="1_10t73"]
 
@@ -31,6 +31,9 @@ bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_idcvy"]
 bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ndl1"]
+bg_color = Color(0.374989, 0.18262, 0, 1)
 
 [resource]
 default_font = ExtResource("1_10t73")
@@ -66,3 +69,4 @@ OptionButton/styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_27lge")
 OptionButton/styles/normal = SubResource("StyleBoxFlat_10t73")
 OptionButton/styles/pressed = SubResource("StyleBoxFlat_lsrxj")
 OptionButton/styles/pressed_mirrored = SubResource("StyleBoxFlat_idcvy")
+Panel/styles/panel = SubResource("StyleBoxFlat_2ndl1")

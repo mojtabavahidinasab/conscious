@@ -1,6 +1,10 @@
 extends VBoxContainer
 
 
+func _process(س :float):
+	$"امتیاز".text = پارسی‌سازی.شماره_پارسی(str(بازی.امتیاز))
+
+
 func _ready():
 	theme = بازی.سبک_برگزیده
 

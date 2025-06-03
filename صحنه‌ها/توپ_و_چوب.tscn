@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://ddmy8ea3w8cy4"]
+
+[ext_resource type="Theme" uid="uid://ckmf8v6was3nc" path="res://سبک‌ها/آفتاب.tres" id="1_p6dxl"]
+[ext_resource type="Script" uid="uid://bmg23k7hv24sr" path="res://فردادان/توپ_و_چوب.gd" id="2_u8ovr"]
+[ext_resource type="Texture2D" uid="uid://deh7ripsot21l" path="res://فرتوران/fightJoy_02.png" id="3_7l7u2"]
+[ext_resource type="PackedScene" uid="uid://dqxkvcepuv835" path="res://صحنه‌ها/ایستاده.tscn" id="3_8x3qm"]
+[ext_resource type="PackedScene" uid="uid://cmv5qev6nmt2q" path="res://صحنه‌ها/سر.tscn" id="4_it7mp"]
+[ext_resource type="PackedScene" uid="uid://cdmbamtpgxqn3" path="res://صحنه‌ها/شمارش_آغازبازی.tscn" id="5_wsurp"]
+[ext_resource type="PackedScene" uid="uid://jkpxqgqjbuk7" path="res://صحنه‌ها/آوا.tscn" id="7_0j8e0"]
+
+[node name="توپ و چوب" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_p6dxl")
+script = ExtResource("2_u8ovr")
+
+[node name="ایستاده" parent="." instance=ExtResource("3_8x3qm")]
+layout_mode = 1
+offset_top = -196.0
+offset_bottom = 196.0
+
+[node name="سر" parent="." instance=ExtResource("4_it7mp")]
+layout_mode = 1
+offset_bottom = 78.0
+
+[node name="شمارش" parent="." instance=ExtResource("5_wsurp")]
+layout_mode = 1
+
+[node name="تخته" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 360.0
+offset_right = 610.0
+offset_bottom = 860.0
+theme_override_constants/separation = 4
+
+[node name="توپ" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 100.0
+texture = ExtResource("3_7l7u2")
+
+[node name="آوا" parent="." instance=ExtResource("7_0j8e0")]

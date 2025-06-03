@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6mlp37ettqn8"
-path="res://.godot/imported/up.png-760a9d17fd1f40f9f9a9d4484a8a1248.ctex"
+uid="uid://dismai0e6hc31"
+path="res://.godot/imported/سمت چپ.png-4ff470d396f67dccb3dc09c2cd04d8b5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://فرتوران/up.png"
-dest_files=["res://.godot/imported/up.png-760a9d17fd1f40f9f9a9d4484a8a1248.ctex"]
+source_file="res://فرتوران/سمت چپ.png"
+dest_files=["res://.godot/imported/سمت چپ.png-4ff470d396f67dccb3dc09c2cd04d8b5.ctex"]
 
 [params]
 

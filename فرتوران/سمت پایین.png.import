@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cv8lmh3j776af"
-path="res://.godot/imported/جاتوپی_برگزیده.png-d437c167cfa8ac1d765226bdcc1a8529.ctex"
+uid="uid://dj413cfcdltbx"
+path="res://.godot/imported/سمت پایین.png-5a66537d98cace52fbf2c1362430ec83.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://فرتوران/جاتوپی_برگزیده.png"
-dest_files=["res://.godot/imported/جاتوپی_برگزیده.png-d437c167cfa8ac1d765226bdcc1a8529.ctex"]
+source_file="res://فرتوران/سمت پایین.png"
+dest_files=["res://.godot/imported/سمت پایین.png-5a66537d98cace52fbf2c1362430ec83.ctex"]
 
 [params]
 

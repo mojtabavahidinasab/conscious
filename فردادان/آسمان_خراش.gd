@@ -1,6 +1,5 @@
 extends Control
 @export var طبقه: PackedScene
-var امتیاز = 0
 var تلاش‌ها = 7
 var فرصت‌ها = 5
 var نمونه‌فرصت‌ها = []
@@ -10,11 +9,13 @@ var طبقه_آینه = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	بازی.امتیاز = 0
 	theme = بازی.سبک_برگزیده
 	$"سر/ایستاننده".pressed.connect($"سر".بایست.bind(get_children()))
 	$"ایستاده/ادامه".pressed.connect($"ایستاده".ادامه_بازی.bind(get_children()))
 	$"ایستاده/ازنو".pressed.connect($"ایستاده".بازی_ازنو)
 	$"ایستاده/برگردان".pressed.connect($"ایستاده".بیرون_رفتن_ازبازی)
+	await $"شمارش".آغاز
 	نمایش()
 
 
@@ -53,9 +54,7 @@ func بساز(شمارطبقات):
 func پیشروی(شماره: int):
 	if پارسی‌سازی.شماره_پارسی(str(شماره)) == نمونه‌فرصت‌ها.front().name:
 		نمونه‌فرصت‌ها.pop_front().queue_free()
-		امتیاز += 1
-		$"سر/امتیاز".text = "امتیاز: {0}".format([پارسی‌سازی.شماره_پارسی(str(امتیاز))])
-		$"ایستاده/امتیاز".text = پارسی‌سازی.شماره_پارسی(str(امتیاز))
+		بازی.امتیاز += 1
 		$آوا.سردادن("درست")
 	else:
 		$آوا.سردادن("نادرست")
