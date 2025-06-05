@@ -22,10 +22,6 @@ func _ready():
 	بازی.امتیاز = 0
 	theme = بازی.سبک_برگزیده
 	تلاش‌ها = 5
-	$"سر/ایستاننده".pressed.connect($"سر".بایست.bind(get_children()))
-	$"ایستاده/ادامه".pressed.connect($"ایستاده".ادامه_بازی.bind(get_children()))
-	$"ایستاده/ازنو".pressed.connect($"ایستاده".بازی_ازنو)
-	$"ایستاده/برگردان".pressed.connect($"ایستاده".بیرون_رفتن_ازبازی)
 	for سطر in range(1, بعدها + 1):
 		for ستون in range(1, بعدها + 1):
 			get_node("تن/{0}/{1}".format([سطر, ستون])).pressed.connect(پیشروی.bind([سطر, ستون]))

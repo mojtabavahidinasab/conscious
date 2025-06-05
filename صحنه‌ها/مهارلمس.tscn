@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqc2l58fx3tf1"]
+
+[ext_resource type="Script" uid="uid://dref802xkh7gb" path="res://فردادان/مهارلمس.gd" id="1_m04yq"]
+
+[node name="مهارلمس" type="Node"]
+script = ExtResource("1_m04yq")

@@ -46,3 +46,7 @@ size_flags_vertical = 3
 text = "بیرون رفتن از بازی"
 
 [node name="آوا" parent="." instance=ExtResource("3_vyke3")]
+
+[connection signal="pressed" from="ادامه" to="." method="ادامه_بازی"]
+[connection signal="pressed" from="ازنو" to="." method="بازی_ازنو"]
+[connection signal="pressed" from="برگردان" to="." method="بیرون_رفتن_ازبازی"]

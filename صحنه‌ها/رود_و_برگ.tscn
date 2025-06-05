@@ -1,0 +1,97 @@
+[gd_scene load_steps=15 format=3 uid="uid://b3ug64v8tex0u"]
+
+[ext_resource type="Script" uid="uid://ceid62vghir8s" path="res://فردادان/رود_و_برگ.gd" id="1_8kab5"]
+[ext_resource type="Texture2D" uid="uid://v6sw0yxtg7ug" path="res://فرتوران/برگ.png" id="2_44qc5"]
+[ext_resource type="Shader" uid="uid://7tevbdcm8uql" path="res://فردادان/آب۲.gdshader" id="2_cdpyu"]
+[ext_resource type="Shader" uid="uid://c1dw4ge152f1y" path="res://فردادان/حرکت.gdshader" id="2_vr1ge"]
+[ext_resource type="PackedScene" uid="uid://jkpxqgqjbuk7" path="res://صحنه‌ها/آوا.tscn" id="4_kvpt6"]
+[ext_resource type="PackedScene" uid="uid://cdmbamtpgxqn3" path="res://صحنه‌ها/شمارش_آغازبازی.tscn" id="5_l3wnw"]
+[ext_resource type="PackedScene" uid="uid://dqxkvcepuv835" path="res://صحنه‌ها/ایستاده.tscn" id="5_nfprv"]
+[ext_resource type="PackedScene" uid="uid://cmv5qev6nmt2q" path="res://صحنه‌ها/سر.tscn" id="6_8kab5"]
+[ext_resource type="PackedScene" uid="uid://bqc2l58fx3tf1" path="res://صحنه‌ها/مهارلمس.tscn" id="9_fy3yt"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vr1ge"]
+noise_type = 2
+frequency = 0.1
+fractal_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vr1ge"]
+noise = SubResource("FastNoiseLite_vr1ge")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fy3yt"]
+shader = ExtResource("2_cdpyu")
+shader_parameter/offSet = 0.0
+shader_parameter/YDistortion = 1.0
+shader_parameter/waterNoise = SubResource("NoiseTexture2D_vr1ge")
+shader_parameter/waterColor = Color(0.117, 0.27, 0.58, 1)
+shader_parameter/colorCorection = 0.85
+shader_parameter/distortionForce = 0.01
+shader_parameter/WDBrightness = 1.5
+shader_parameter/WDFreq = 0.6
+shader_parameter/WDSize = 0.9
+shader_parameter/WDSpeed = 4.0
+shader_parameter/tiling = Vector2(1, 1)
+shader_parameter/offSetSpeed = Vector2(0.11, 0.1)
+shader_parameter/backGroundDirX = 0.01
+shader_parameter/backGroundDirY = 0.01
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_44qc5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vr1ge"]
+shader = ExtResource("2_vr1ge")
+shader_parameter/tiling = Vector2(1, 1)
+shader_parameter/offset = Vector2(0.1, 0)
+shader_parameter/moving = true
+
+[node name="رود و برگ" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8kab5")
+metadata/_edit_lock_ = true
+
+[node name="مهارلمس" parent="." instance=ExtResource("9_fy3yt")]
+
+[node name="آوا" parent="." instance=ExtResource("4_kvpt6")]
+
+[node name="آب" type="TextureRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_fy3yt")
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 1280.0
+pivot_offset = Vector2(640, 640)
+texture = SubResource("CanvasTexture_44qc5")
+metadata/_edit_lock_ = true
+
+[node name="برگ" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_vr1ge")
+position = Vector2(640, 640)
+texture = ExtResource("2_44qc5")
+metadata/_edit_lock_ = true
+
+[node name="ایستاده" parent="." instance=ExtResource("5_nfprv")]
+layout_mode = 1
+offset_top = -196.0
+offset_bottom = 196.0
+metadata/_edit_lock_ = true
+
+[node name="سر" parent="." instance=ExtResource("6_8kab5")]
+layout_mode = 1
+offset_bottom = 78.0
+metadata/_edit_lock_ = true
+
+[node name="شمارش" parent="." instance=ExtResource("5_l3wnw")]
+layout_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="شمارشگر" type="Timer" parent="."]
+wait_time = 61.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="شمارشگر" to="." method="پایان_بازی"]

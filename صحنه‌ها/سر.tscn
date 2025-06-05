@@ -31,3 +31,5 @@ layout_mode = 2
 text = "  | |  "
 
 [node name="آوا" parent="." instance=ExtResource("3_eywgq")]
+
+[connection signal="pressed" from="ایستاننده" to="." method="بایست"]

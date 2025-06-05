@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdmrrn0dwuxem"]
+[gd_scene load_steps=6 format=3 uid="uid://bdmrrn0dwuxem"]
 
 [ext_resource type="Theme" uid="uid://ckmf8v6was3nc" path="res://سبک‌ها/آفتاب.tres" id="1_4ng2d"]
 [ext_resource type="Script" uid="uid://d0eikci7qr40g" path="res://فردادان/سرآغاز.gd" id="2_q8cep"]
 [ext_resource type="PackedScene" uid="uid://jkpxqgqjbuk7" path="res://صحنه‌ها/آوا.tscn" id="3_4ng2d"]
+[ext_resource type="Texture2D" uid="uid://ca632qltgji3t" path="res://فرتوران/question.png" id="3_d1cuv"]
+[ext_resource type="Texture2D" uid="uid://brx2nw5p40mel" path="res://فرتوران/cross.png" id="4_ihxgi"]
 
 [node name="سرآغاز" type="Control"]
 layout_mode = 3
@@ -472,6 +474,40 @@ text = "سبک:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="نمایش درباره پیش از آغازبازی" type="HBoxContainer" parent="پیکربندی/بخش‌ها"]
+layout_mode = 2
+
+[node name="دکمه" type="Button" parent="پیکربندی/بخش‌ها/نمایش درباره پیش از آغازبازی"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+button_pressed = true
+text = "بله"
+
+[node name="برچسب" type="Label" parent="پیکربندی/بخش‌ها/نمایش درباره پیش از آغازبازی"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "پیش از آغاز بازی، درباره‌اش بگو:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="پخش آوا" type="HBoxContainer" parent="پیکربندی/بخش‌ها"]
+layout_mode = 2
+
+[node name="دکمه" type="Button" parent="پیکربندی/بخش‌ها/پخش آوا"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+button_pressed = true
+text = "بله"
+
+[node name="برچسب" type="Label" parent="پیکربندی/بخش‌ها/پخش آوا"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "پخش آوا:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="چندنفره" type="ScrollContainer" parent="."]
 visible = false
 layout_mode = 1
@@ -523,6 +559,50 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "بازی‌ها"
 
+[node name="درباره بازی" type="ScrollContainer" parent="."]
+visible = false
+custom_minimum_size = Vector2(720, 1200)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="بخش‌ها" type="VBoxContainer" parent="درباره بازی"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="متن" type="Label" parent="درباره بازی/بخش‌ها"]
+custom_minimum_size = Vector2(720, 0)
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="نوار درباره بازی" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="آموزش" type="Button" parent="نوار درباره بازی"]
+layout_mode = 2
+icon = ExtResource("3_d1cuv")
+icon_alignment = 1
+
+[node name="آغاز" type="Button" parent="نوار درباره بازی"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "آغاز"
+
+[node name="خروج" type="Button" parent="نوار درباره بازی"]
+layout_mode = 2
+icon = ExtResource("4_ihxgi")
+icon_alignment = 1
+
 [node name="آوا" parent="." instance=ExtResource("3_4ng2d")]
 
 [connection signal="pressed" from="بازی‌ها/بخش‌ها/توجه/نگهدارنده/فهرست/قهوه" to="." method="آغازبازی"]
@@ -543,7 +623,7 @@ text = "بازی‌ها"
 [connection signal="pressed" from="بازی‌ها/بخش‌ها/انعطاف‌پذیری/نگهدارنده/فهرست/BrainShiftOverdrive" to="." method="آغازبازی"]
 [connection signal="pressed" from="بازی‌ها/بخش‌ها/انعطاف‌پذیری/نگهدارنده/فهرست/صورت فلکی" to="." method="آغازبازی"]
 [connection signal="pressed" from="بازی‌ها/بخش‌ها/انعطاف‌پذیری/نگهدارنده/فهرست/افقی عمودی" to="." method="آغازبازی"]
-[connection signal="pressed" from="بازی‌ها/بخش‌ها/انعطاف‌پذیری/نگهدارنده/فهرست/رود برگ" to="." method="آغازبازی"]
+[connection signal="pressed" from="بازی‌ها/بخش‌ها/انعطاف‌پذیری/نگهدارنده/فهرست/رود برگ" to="." method="آغازبازی" binds= ["uid://b3ug64v8tex0u"]]
 [connection signal="pressed" from="بازی‌ها/بخش‌ها/انعطاف‌پذیری/نگهدارنده/فهرست/زوجواکه" to="." method="آغازبازی" binds= ["uid://brogd6ysmgllk"]]
 [connection signal="pressed" from="بازی‌ها/بخش‌ها/انعطاف‌پذیری/نگهدارنده/فهرست/رنگومتن" to="." method="آغازبازی" binds= ["uid://bxs5u82yt08gx"]]
 [connection signal="pressed" from="بازی‌ها/بخش‌ها/حل مسئله/نگهدارنده/فهرست/دزد دریایی" to="." method="آغازبازی"]
@@ -562,7 +642,7 @@ text = "بازی‌ها"
 [connection signal="pressed" from="بازی‌ها/بخش‌ها/ریاضی/نگهدارنده/فهرست/قمار" to="." method="آغازبازی"]
 [connection signal="pressed" from="بازی‌ها/بخش‌ها/ریاضی/نگهدارنده/فهرست/شعبده" to="." method="آغازبازی"]
 [connection signal="pressed" from="بازی‌ها/بخش‌ها/ریاضی/نگهدارنده/فهرست/آشپزباشی" to="." method="آغازبازی"]
-[connection signal="pressed" from="بازی‌ها/بخش‌ها/ریاضی/نگهدارنده/فهرست/بیشتر" to="." method="آغازبازی"]
+[connection signal="pressed" from="بازی‌ها/بخش‌ها/ریاضی/نگهدارنده/فهرست/بیشتر" to="." method="آغازبازی" binds= ["uid://bygv262qaeox5"]]
 [connection signal="pressed" from="بازی‌ها/بخش‌ها/ریاضی/نگهدارنده/فهرست/باران" to="." method="آغازبازی" binds= ["uid://jlkupge2q7lw"]]
 [connection signal="pressed" from="بازی‌ها/بخش‌ها/زبان/نگهدارنده/فهرست/WordSnatchers" to="." method="آغازبازی"]
 [connection signal="pressed" from="بازی‌ها/بخش‌ها/زبان/نگهدارنده/فهرست/WordBubble" to="." method="آغازبازی"]
@@ -571,7 +651,10 @@ text = "بازی‌ها"
 [connection signal="pressed" from="بازی‌ها/بخش‌ها/زبان/نگهدارنده/فهرست/Continuum" to="." method="آغازبازی"]
 [connection signal="pressed" from="بازی‌ها/بخش‌ها/زبان/نگهدارنده/فهرست/Contexual" to="." method="آغازبازی"]
 [connection signal="item_selected" from="پیکربندی/بخش‌ها/سبک/گزینه‌ها" to="." method="تغییرسبک"]
+[connection signal="toggled" from="پیکربندی/بخش‌ها/نمایش درباره پیش از آغازبازی/دکمه" to="." method="تغییرپیکربندی" binds= ["نمایش درباره پیش از آغاز بازی", "پیکربندی"]]
+[connection signal="toggled" from="پیکربندی/بخش‌ها/پخش آوا/دکمه" to="." method="تغییرپیکربندی" binds= ["پخش آوا", "پیکربندی"]]
 [connection signal="pressed" from="بخش‌ها/چندنفره" to="." method="نمایش‌بخش" binds= ["چندنفره"]]
 [connection signal="pressed" from="بخش‌ها/پیکربندی" to="." method="نمایش‌بخش" binds= ["پیکربندی"]]
 [connection signal="pressed" from="بخش‌ها/آمار" to="." method="نمایش‌بخش" binds= ["آمار"]]
 [connection signal="pressed" from="بخش‌ها/بازی‌ها" to="." method="نمایش‌بخش" binds= ["بازی‌ها"]]
+[connection signal="pressed" from="نوار درباره بازی/خروج" to="." method="نمایش_بخش‌ها"]

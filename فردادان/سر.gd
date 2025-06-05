@@ -9,11 +9,11 @@ func _ready():
 	theme = بازی.سبک_برگزیده
 
 
-func بایست(چیزها: Array):
+func بایست():
 	$آوا.سردادن("دکمه")
-	for چیز in چیزها:
-		if چیز.name == "ایستاده":
-			چیز.show()
-		elif چیز.has_method("hide"):
-			چیز.hide()
+	for بچه in get_parent().get_children():
+		if بچه.name == "ایستاده":
+			بچه.show()
+		elif بچه.has_method("hide"):
+			بچه.hide()
 	get_tree().paused = true

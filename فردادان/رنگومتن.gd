@@ -45,10 +45,6 @@ func _ready() -> void:
 	بازی.امتیاز = 0
 	theme = بازی.سبک_برگزیده
 	$"شمارشگر".start()
-	$"سر/ایستاننده".pressed.connect($"سر".بایست.bind(get_children()))
-	$"ایستاده/ادامه".pressed.connect($"ایستاده".ادامه_بازی.bind(get_children()))
-	$"ایستاده/ازنو".pressed.connect($"ایستاده".بازی_ازنو)
-	$"ایستاده/برگردان".pressed.connect($"ایستاده".بیرون_رفتن_ازبازی)
 	await $"شمارش".آغاز
 	پیشروی()
 

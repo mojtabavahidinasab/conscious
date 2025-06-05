@@ -53,10 +53,6 @@ func _ready():
 	$"تخته‌کلید/۰/-".hide()
 	$"تخته‌کلید/۰/٫".hide()
 	$"تخته‌کلید/۰/✔️".pressed.connect(بنویس)
-	$"سر/ایستاننده".pressed.connect($"سر".بایست.bind(get_children()))
-	$"ایستاده/ادامه".pressed.connect($"ایستاده".ادامه_بازی.bind(get_children()))
-	$"ایستاده/ازنو".pressed.connect($"ایستاده".بازی_ازنو)
-	$"ایستاده/برگردان".pressed.connect($"ایستاده".بیرون_رفتن_ازبازی)
 	await $"شمارش".آغاز
 	پیشروی()
 

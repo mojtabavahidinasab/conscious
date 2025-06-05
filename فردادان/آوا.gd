@@ -1,32 +1,31 @@
 extends AudioStreamPlayer
-class_name آوای
 
 
 func سردادن(ندا: String):
+	if !بازی.پخش_آوا:
+		return 1
 	if ندا == "دکمه":
-		var دکمه۱ = preload("res://آواها/دکمه/بشکن۱.wav")
-		var دکمه۲ = preload("res://آواها/دکمه/بشکن۲.wav")
-		stream = [دکمه۱, دکمه۲].pick_random()
+		stream = load([بازی.آوای_دکمه۱, بازی.آوای_دکمه۲].pick_random())
 		play()
 	elif ندا == "آغازشمارشگر":
-		stream = preload("res://آواها/شمارشگرآغاز.wav")
+		stream = preload(بازی.آوای_آغازشمارشگر)
 		play()
 	elif ندا == "آغازبازی":
-		stream = preload("res://آواها/آغاز.mp3")
+		stream = preload(بازی.آوای_آغازبازی)
 		play()
 	elif ندا == "پایان بازی":
 		pass
 	elif ندا == "درست":
-		stream = preload("res://آواها/درست.ogg")
+		stream = preload(بازی.آوای_درست)
 		play()
 	elif ندا == "نادرست":
-		stream = preload("res://آواها/نادرست.wav")
+		stream = preload(بازی.آوای_نادرست)
 		play()
 	elif ندا == "باخت":
-		stream = preload("res://آواها/باخت.wav")
+		stream = preload(بازی.آوای_باخت)
 		play()
 	elif ندا == "پیروزی":
-		stream = preload("res://آواها/پیروزی۱.wav")
+		stream = preload(بازی.آوای_پیروزی)
 		play()
 	else:
 		push_warning("آوای {0} ناشناخته می‌باشد".format([ندا]))
