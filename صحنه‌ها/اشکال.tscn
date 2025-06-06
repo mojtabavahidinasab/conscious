@@ -1,0 +1,161 @@
+[gd_scene load_steps=13 format=3 uid="uid://vvg325p5f6hc"]
+
+[ext_resource type="Theme" uid="uid://ckmf8v6was3nc" path="res://سبک‌ها/آفتاب.tres" id="1_1bmfe"]
+[ext_resource type="PackedScene" uid="uid://cdmbamtpgxqn3" path="res://صحنه‌ها/شمارش_آغازبازی.tscn" id="2_6n688"]
+[ext_resource type="Script" uid="uid://i3ymrgn4mxhh" path="res://فردادان/اشکال.gd" id="2_cpb06"]
+[ext_resource type="PackedScene" uid="uid://jkpxqgqjbuk7" path="res://صحنه‌ها/آوا.tscn" id="3_j1va4"]
+[ext_resource type="PackedScene" uid="uid://dqxkvcepuv835" path="res://صحنه‌ها/ایستاده.tscn" id="4_cpb06"]
+[ext_resource type="PackedScene" uid="uid://cmv5qev6nmt2q" path="res://صحنه‌ها/سر.tscn" id="5_qlads"]
+[ext_resource type="Texture2D" uid="uid://do4dfusqpxkwi" path="res://فرتوران/دایره.png" id="6_6n688"]
+[ext_resource type="Texture2D" uid="uid://ckby8s0hppbsu" path="res://فرتوران/گل.png" id="7_j1va4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m7r77"]
+bg_color = Color(0, 1, 1, 1)
+corner_radius_top_left = 255
+corner_radius_top_right = 255
+corner_radius_bottom_right = 255
+corner_radius_bottom_left = 255
+corner_detail = 20
+
+[sub_resource type="Animation" id="Animation_j1va4"]
+resource_name = "پویانمایی"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("پس:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-150, 640), Vector2(360, 640)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("پیش:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(360, 640), Vector2(870, 640)]
+}
+
+[sub_resource type="Animation" id="Animation_cpb06"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("پس:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-150, 640)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("پیش:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(360, 640)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qlads"]
+_data = {
+&"RESET": SubResource("Animation_cpb06"),
+&"پویانمایی": SubResource("Animation_j1va4")
+}
+
+[node name="اشکال" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_1bmfe")
+script = ExtResource("2_cpb06")
+
+[node name="شمارش" parent="." instance=ExtResource("2_6n688")]
+layout_mode = 1
+offset_left = 164.08
+offset_top = -231.481
+offset_right = -141.76
+offset_bottom = -544.521
+grow_horizontal = 1
+grow_vertical = 1
+theme_override_constants/outline_size = 64
+theme_override_font_sizes/font_size = 106
+theme_override_styles/normal = SubResource("StyleBoxFlat_m7r77")
+
+[node name="روکش" parent="شمارش" index="1"]
+visible = false
+
+[node name="آوا" parent="." instance=ExtResource("3_j1va4")]
+
+[node name="ایستاده" parent="." instance=ExtResource("4_cpb06")]
+layout_mode = 1
+
+[node name="سر" parent="." instance=ExtResource("5_qlads")]
+layout_mode = 1
+
+[node name="تن" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="پیش" type="Sprite2D" parent="تن"]
+position = Vector2(360, 640)
+texture = ExtResource("6_6n688")
+
+[node name="پس" type="Sprite2D" parent="تن"]
+position = Vector2(-150, 640)
+texture = ExtResource("7_j1va4")
+
+[node name="پویانمایی" type="AnimationPlayer" parent="تن"]
+libraries = {
+&"": SubResource("AnimationLibrary_qlads")
+}
+
+[node name="پا" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -78.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="خیر" type="Button" parent="پا"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "خیر"
+
+[node name="بله" type="Button" parent="پا"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "بله"
+
+[node name="شمارشگر" type="Timer" parent="."]
+wait_time = 61.0
+one_shot = true
+autostart = true
+
+[connection signal="pressed" from="پا/خیر" to="." method="پیشروی" binds= [false]]
+[connection signal="pressed" from="پا/بله" to="." method="پیشروی" binds= [true]]
+[connection signal="timeout" from="شمارشگر" to="." method="پایان_بازی"]
+
+[editable path="شمارش"]
