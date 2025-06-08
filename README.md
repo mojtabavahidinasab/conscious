@@ -1,13 +1,14 @@
-# بازی هنوز آماده نیست.
+# ساخته شده با گودوت ۴.۴
 
 
 نگارش سازگار با معماری دستگاه اندروید خود را از [اینجا](https://github.com/mojtabavahidinasab/conscious/releases) بارگیرید.
 
 
 ## درباره
-| آفتاب                                                                                                               | مهتاب                                                                                                               |
-| -------                                                                                                             | ------                                                                                                              |
-| ![آفتاب](https://bayanbox.ir/view/7315322995791869504/Screenshot-2025-05-24-07-37-32-504-com.example.conscious.jpg) | ![مهتاب](https://bayanbox.ir/view/9092189637684755864/Screenshot-2025-05-24-07-37-43-881-com.example.conscious.jpg) |
+| آفتاب                                                                                                                | مهتاب                                                                                                                |
+| -------                                                                                                              | ------                                                                                                               |
+| ![آفتاب](https://bayanbox.ir/view/3748448003925200110/Screenshot-2025-06-08-23-54-07-331-ir.mujtablue.conscious.jpg) | ![مهتاب](https://bayanbox.ir/view/761907661810547526/Screenshot-2025-06-08-23-53-49-931-ir.mujtablue.conscious.jpg)  |
+| ![آفتاب](https://bayanbox.ir/view/4025679454665557039/Screenshot-2025-06-08-23-54-04-524-ir.mujtablue.conscious.jpg) | ![مهتاب](https://bayanbox.ir/view/7121375139455013903/Screenshot-2025-06-08-23-53-56-897-ir.mujtablue.conscious.jpg) |
 
 
 
@@ -26,12 +27,10 @@
 | Lumosity              | هوشیار          |
 | ---                   | ---             |
 | Assist Ants           | موریار          |
-| Lost in Migration     | مهاجر           |
 | Playing Koi           | ماهی            |
 | Star Search           | فرق             |
 | Train of Though       | قطار            |
 | Trouble Brewing       | قهوه            |
-| Brain Shift Overdrive | زوجواکه فردخوان |
 | Dissilusion           | افقی عمودی      |
 | Fues Clues            | فاز و نول       |
 | Masterpiece           | پازل            |
@@ -48,7 +47,6 @@
 | Highly Hazards        | خیابان          |
 | Penguin Persuit       | پنگوئن          |
 | River Ranger          | رود             |
-| Speed Match Overdrive | اشکال دیوانه    |
 | Spatial Speed Match   | اشکال فضایی     |
 | Speed Pack            | چمدان           |
 | Splitting Seeds       | تقسیم دانه      |
