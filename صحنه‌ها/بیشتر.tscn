@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bygv262qaeox5"]
 
-[ext_resource type="Script" uid="uid://dlyicwq5364ut" path="res://فرتوران/بیشتر.gd" id="1_hif6j"]
+[ext_resource type="Script" uid="uid://dlyicwq5364ut" path="res://فردادان/بیشتر.gd" id="1_hif6j"]
 [ext_resource type="Theme" uid="uid://ckmf8v6was3nc" path="res://سبک‌ها/آفتاب.tres" id="1_isd2y"]
 [ext_resource type="PackedScene" uid="uid://jkpxqgqjbuk7" path="res://صحنه‌ها/آوا.tscn" id="1_qbe75"]
 [ext_resource type="PackedScene" uid="uid://dqxkvcepuv835" path="res://صحنه‌ها/ایستاده.tscn" id="2_hif6j"]
@@ -31,19 +31,23 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -25.0
-offset_bottom = 25.0
+offset_left = 79.0
+offset_top = -128.0
+offset_right = -101.0
+offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="شماره۱" type="Button" parent="تن"]
 layout_mode = 2
+focus_mode = 0
 theme_override_font_sizes/font_size = 71
 text = "۴"
 autowrap_mode = 1
 
 [node name="شماره۲" type="Button" parent="تن"]
 layout_mode = 2
+focus_mode = 0
 theme_override_font_sizes/font_size = 71
 text = "۴۴"
 autowrap_mode = 1
@@ -61,6 +65,7 @@ grow_vertical = 0
 [node name="برابر" type="Button" parent="پا"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_mode = 0
 theme_override_font_sizes/font_size = 128
 text = "برابر"
 

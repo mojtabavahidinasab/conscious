@@ -12,6 +12,9 @@ func _input(رویداد :InputEvent):
 		if رویداد.is_released():
 			مکان_لمس_دوم = رویداد.position
 			جابجایی = مکان_لمس_نخست - مکان_لمس_دوم
+			if جابجایی == Vector2.ZERO:
+				سمت_لمس = ""
+				return 0
 			if abs(جابجایی.x) > abs(جابجایی.y):
 				if جابجایی.x > 0:
 					سمت_لمس = "چپ"

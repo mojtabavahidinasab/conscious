@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://vvg325p5f6hc"]
+[gd_scene load_steps=16 format=3 uid="uid://vvg325p5f6hc"]
 
 [ext_resource type="Theme" uid="uid://ckmf8v6was3nc" path="res://سبک‌ها/آفتاب.tres" id="1_1bmfe"]
 [ext_resource type="PackedScene" uid="uid://cdmbamtpgxqn3" path="res://صحنه‌ها/شمارش_آغازبازی.tscn" id="2_6n688"]
@@ -9,6 +9,16 @@
 [ext_resource type="Texture2D" uid="uid://do4dfusqpxkwi" path="res://فرتوران/دایره.png" id="6_6n688"]
 [ext_resource type="Texture2D" uid="uid://ckby8s0hppbsu" path="res://فرتوران/گل.png" id="7_j1va4"]
 
+[sub_resource type="Gradient" id="Gradient_cpb06"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.423512, 0.314567, 0.288894, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tnolh"]
+gradient = SubResource("Gradient_cpb06")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_qlads"]
+diffuse_texture = SubResource("GradientTexture1D_tnolh")
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m7r77"]
 bg_color = Color(0, 1, 1, 1)
 corner_radius_top_left = 255
@@ -16,6 +26,33 @@ corner_radius_top_right = 255
 corner_radius_bottom_right = 255
 corner_radius_bottom_left = 255
 corner_detail = 20
+
+[sub_resource type="Animation" id="Animation_cpb06"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("پس:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-150, 640)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("پیش:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(360, 640)]
+}
 
 [sub_resource type="Animation" id="Animation_j1va4"]
 resource_name = "پویانمایی"
@@ -45,33 +82,6 @@ tracks/1/keys = {
 "values": [Vector2(360, 640), Vector2(870, 640)]
 }
 
-[sub_resource type="Animation" id="Animation_cpb06"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("پس:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-150, 640)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("پیش:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(360, 640)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qlads"]
 _data = {
 &"RESET": SubResource("Animation_cpb06"),
@@ -87,6 +97,17 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_1bmfe")
 script = ExtResource("2_cpb06")
+
+[node name="پس‌زمینه" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_qlads")
 
 [node name="شمارش" parent="." instance=ExtResource("2_6n688")]
 layout_mode = 1
@@ -142,11 +163,13 @@ grow_vertical = 0
 [node name="خیر" type="Button" parent="پا"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_mode = 0
 text = "خیر"
 
 [node name="بله" type="Button" parent="پا"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_mode = 0
 text = "بله"
 
 [node name="شمارشگر" type="Timer" parent="."]

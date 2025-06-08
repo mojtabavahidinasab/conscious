@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://gdinkoe34vyv"]
 
 [ext_resource type="Script" uid="uid://ccpcoonh820u2" path="res://فردادان/طبقه_ازپیش_ساخته.gd" id="1_22nfi"]
-[ext_resource type="Texture2D" uid="uid://b132xcxh5cfl2" path="res://فرتوران/elementMetal019.png" id="1_vdy4x"]
+[ext_resource type="Texture2D" uid="uid://b8yogb6f0rbgm" path="res://فرتوران/طبقه.png" id="2_22nfi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22nfi"]
 size = Vector2(217, 138)
@@ -17,4 +17,4 @@ position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_22nfi")
 
 [node name="ریخت" type="Sprite2D" parent="."]
-texture = ExtResource("1_vdy4x")
+texture = ExtResource("2_22nfi")

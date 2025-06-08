@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bxs5u82yt08gx"]
+[gd_scene load_steps=12 format=3 uid="uid://bxs5u82yt08gx"]
 
 [ext_resource type="Theme" uid="uid://ckmf8v6was3nc" path="res://سبک‌ها/آفتاب.tres" id="1_e8c32"]
 [ext_resource type="Script" uid="uid://cbomctevd5n6e" path="res://فردادان/رنگومتن.gd" id="2_vf0dl"]
@@ -7,13 +7,29 @@
 [ext_resource type="PackedScene" uid="uid://jkpxqgqjbuk7" path="res://صحنه‌ها/آوا.tscn" id="5_iuect"]
 [ext_resource type="PackedScene" uid="uid://cdmbamtpgxqn3" path="res://صحنه‌ها/شمارش_آغازبازی.tscn" id="6_tnolh"]
 
+[sub_resource type="Gradient" id="Gradient_iuect"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.423512, 0.314567, 0.288894, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tnolh"]
+gradient = SubResource("Gradient_iuect")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_18pcj"]
+diffuse_texture = SubResource("GradientTexture1D_tnolh")
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lbewx"]
-bg_color = Color(0.172549, 0.172549, 0.172549, 1)
-skew = Vector2(0, 0.15)
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7gyot"]
-bg_color = Color(0.172549, 0.172549, 0.172549, 1)
-skew = Vector2(0, 0.15)
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
 
 [node name="متن رنگ" type="Control"]
 layout_mode = 3
@@ -24,6 +40,17 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_e8c32")
 script = ExtResource("2_vf0dl")
+
+[node name="پس‌زمینه" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_18pcj")
 
 [node name="سر" parent="." instance=ExtResource("3_klikh")]
 layout_mode = 1
@@ -76,11 +103,13 @@ grow_vertical = 0
 [node name="خیر" type="Button" parent="پا"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_mode = 0
 text = "خیر"
 
 [node name="بله" type="Button" parent="پا"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_mode = 0
 text = "بله"
 
 [node name="شمارشگر" type="Timer" parent="."]

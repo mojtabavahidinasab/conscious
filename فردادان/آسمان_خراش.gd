@@ -1,10 +1,12 @@
 extends Control
-@export var طبقه: PackedScene
+@export var طبقه :PackedScene
+@export var طبقه_پایانی :Texture = preload(بازی.فرتورطبقه_پایانی)
 var تلاش‌ها = 7
 var فرصت‌ها = 5
 var نمونه‌فرصت‌ها = []
 var اندازه‌فرصت = Vector2(110, 110)
 var طبقه_آینه = false
+var شماره‌های_برگزیده :Array[int] = []
 
 
 # Called when the node enters the scene tree for the first time.
@@ -29,27 +31,25 @@ func حرکت_دوربین(نمونه):
 
 
 func بساز(شمارطبقات):
-	if not شمارطبقات:
-		$شمارش.show()
-		get_tree().paused = true
-		$"شمارش/شمارشگرآغاز".start()
-		$آوا.سردادن("آغازشمارشگر")
-	else:
+	for هرطبقه in شمارطبقات:
 		var نمونه = طبقه.instantiate()
 		نمونه.position = $دوربین.position - Vector2(0, get_parent_area_size()[1] / 2)
 		نمونه.connect("تماس", حرکت_دوربین.bind(نمونه))
-		if طبقه_آینه:
-			نمونه.get_node("ریخت").flip_h = true
-		طبقه_آینه = not طبقه_آینه
+		if هرطبقه == شمارطبقات - 1:
+			نمونه.get_node("ریخت").texture = طبقه_پایانی
 		add_child(نمونه)
-		$"شمارشگر".timeout.disconnect(بساز)
-		$شمارشگر.timeout.connect(بساز.bind(شمارطبقات - 1))
-		$"شمارشگر".start()
+		await get_tree().create_timer(1.8).timeout
+	await get_tree().create_timer(1.8).timeout
+	$شمارش.show()
+	get_tree().paused = true
+	$"شمارش/شمارشگرآغاز".start()
+	$آوا.سردادن("آغازشمارشگر")
 
 
 func پیشروی(شماره: int):
-	if پارسی‌سازی.شماره_پارسی(str(شماره)) == نمونه‌فرصت‌ها.front().name:
+	if شماره == شماره‌های_برگزیده.front():
 		نمونه‌فرصت‌ها.pop_front().queue_free()
+		شماره‌های_برگزیده.pop_front()
 		بازی.امتیاز += 1
 		$آوا.سردادن("درست")
 	else:
@@ -58,9 +58,11 @@ func پیشروی(شماره: int):
 		for نمونه in نمونه‌فرصت‌ها:
 			نمونه.queue_free()
 		نمونه‌فرصت‌ها.clear()
-		return بساز(شمارطبقات)
+		شماره‌های_برگزیده.clear()
+		await بساز(شمارطبقات)
+		return 0
 	if not نمونه‌فرصت‌ها:
-		return بساز(فرصت‌ها)
+		await بساز(فرصت‌ها)
 
 
 func پایان‌بازی():
@@ -85,6 +87,12 @@ func نمایش():
 		$آوا.سردادن("آغازبازی")
 	if not تلاش‌ها:
 		return پایان‌بازی()
+	var شماره‌ها :Array[int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+	for هرفصت in فرصت‌ها:
+		var شماره :int = شماره‌ها.pick_random()
+		شماره‌ها.erase(شماره)
+		شماره‌های_برگزیده.append(شماره)
+	شماره‌های_برگزیده.sort()
 	for فرصت in فرصت‌ها:
 		var درازا = get_parent_area_size()[0] - اندازه‌فرصت.x
 		var پهنا = $"دوربین".position.y + get_parent_area_size()[1] / 2 - اندازه‌فرصت.y
@@ -110,9 +118,9 @@ func نمایش():
 		نمونه.get("theme_override_styles/normal").corner_radius_bottom_left = 255
 		نمونه.get("theme_override_styles/normal").corner_radius_bottom_right = 255
 		نمونه.add_theme_stylebox_override("disabled", نمونه.get("theme_override_styles/normal"))
-		نمونه.pressed.connect(پیشروی.bind(فرصت + 1))
-		نمونه.name = پارسی‌سازی.شماره_پارسی(str(فرصت + 1))
-		نمونه.text = پارسی‌سازی.شماره_پارسی(str(فرصت + 1))
+		نمونه.pressed.connect(پیشروی.bind(شماره‌های_برگزیده[فرصت]))
+		نمونه.name = پارسی‌سازی.شماره_پارسی(str(شماره‌های_برگزیده[فرصت]))
+		نمونه.text = پارسی‌سازی.شماره_پارسی(str(شماره‌های_برگزیده[فرصت]))
 		نمونه.disabled = true
 		نمونه‌فرصت‌ها.append(نمونه)
 		add_child(نمونه)

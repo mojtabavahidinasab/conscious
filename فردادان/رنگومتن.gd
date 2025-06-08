@@ -14,9 +14,7 @@ func پیشروی(متغیر = null):
 	var رنگ‌ها = {
 		"آبی": Color.BLUE,
 		"مشکی": Color.BLACK,
-		"سفید": Color.WHITE,
 		"زرد": Color.YELLOW,
-		"سبز": Color.GREEN,
 		"قرمز": Color.RED
 		}
 	if متغیر != null:

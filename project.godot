@@ -14,7 +14,8 @@ config/name="conscious"
 config/name_localized={
 "fa": "هوشیار"
 }
-config/version="0.0.8"
+config/description="یک سری بازی که ذهن آدم رو ورز می‌ده."
+config/version="0.0.9"
 run/main_scene="uid://bdmrrn0dwuxem"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/bg_color=Color(1, 1, 1, 1)

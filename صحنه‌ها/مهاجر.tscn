@@ -1,0 +1,145 @@
+[gd_scene load_steps=24 format=3 uid="uid://bgvt0qc8xdwej"]
+
+[ext_resource type="Script" uid="uid://c8pesqge7mo4c" path="res://فردادان/مهاجر.gd" id="1_153y0"]
+[ext_resource type="Texture2D" uid="uid://dkpqpykjok6x1" path="res://فرتوران/blue_land.png" id="1_h5mx6"]
+[ext_resource type="Texture2D" uid="uid://cohd2rwh2vomn" path="res://فرتوران/پرستو.png" id="2_s30s0"]
+[ext_resource type="PackedScene" uid="uid://cmv5qev6nmt2q" path="res://صحنه‌ها/سر.tscn" id="4_nyobp"]
+[ext_resource type="PackedScene" uid="uid://bqc2l58fx3tf1" path="res://صحنه‌ها/مهارلمس.tscn" id="4_tbow4"]
+[ext_resource type="PackedScene" uid="uid://cdmbamtpgxqn3" path="res://صحنه‌ها/شمارش_آغازبازی.tscn" id="5_23eb7"]
+[ext_resource type="PackedScene" uid="uid://jkpxqgqjbuk7" path="res://صحنه‌ها/آوا.tscn" id="5_157lj"]
+[ext_resource type="PackedScene" uid="uid://dqxkvcepuv835" path="res://صحنه‌ها/ایستاده.tscn" id="6_duvfs"]
+
+[sub_resource type="Animation" id="Animation_nyobp"]
+resource_name = "اسلش"
+
+[sub_resource type="Animation" id="Animation_duvfs"]
+resource_name = "الف"
+
+[sub_resource type="Animation" id="Animation_o55qg"]
+resource_name = "بعلاوه"
+
+[sub_resource type="Animation" id="Animation_onnsn"]
+resource_name = "به بالا"
+
+[sub_resource type="Animation" id="Animation_8qtv4"]
+resource_name = "به راست"
+
+[sub_resource type="Animation" id="Animation_n0j20"]
+resource_name = "به پایین"
+
+[sub_resource type="Animation" id="Animation_h7okc"]
+resource_name = "به چپ"
+
+[sub_resource type="Animation" id="Animation_23eb7"]
+resource_name = "بک اسلش"
+
+[sub_resource type="Animation" id="Animation_hwmwk"]
+resource_name = "خط تیره"
+
+[sub_resource type="Animation" id="Animation_c1b47"]
+resource_name = "ضربدر"
+
+[sub_resource type="Animation" id="Animation_s30s0"]
+resource_name = "ن کره‌ای"
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_tbow4"]
+resource_name = "ن کره‌ای وارونه"
+
+[sub_resource type="Animation" id="Animation_153y0"]
+resource_name = "ک کره‌ای"
+
+[sub_resource type="Animation" id="Animation_157lj"]
+resource_name = "ک کره‌ای وارونه"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_153y0"]
+_data = {
+&"اسلش": SubResource("Animation_nyobp"),
+&"الف": SubResource("Animation_duvfs"),
+&"بعلاوه": SubResource("Animation_o55qg"),
+&"به بالا": SubResource("Animation_onnsn"),
+&"به راست": SubResource("Animation_8qtv4"),
+&"به پایین": SubResource("Animation_n0j20"),
+&"به چپ": SubResource("Animation_h7okc"),
+&"بک اسلش": SubResource("Animation_23eb7"),
+&"خط تیره": SubResource("Animation_hwmwk"),
+&"ضربدر": SubResource("Animation_c1b47"),
+&"ن کره‌ای": SubResource("Animation_s30s0"),
+&"ن کره‌ای وارونه": SubResource("Animation_tbow4"),
+&"ک کره‌ای": SubResource("Animation_153y0"),
+&"ک کره‌ای وارونه": SubResource("Animation_157lj")
+}
+
+[node name="مهاجر" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_153y0")
+metadata/_edit_lock_ = true
+
+[node name="پس‌زمینه" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_h5mx6")
+metadata/_edit_lock_ = true
+
+[node name="پرستوها" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="1" type="Sprite2D" parent="پرستوها"]
+position = Vector2(265, 218)
+texture = ExtResource("2_s30s0")
+
+[node name="2" type="Sprite2D" parent="پرستوها"]
+position = Vector2(244, 448)
+texture = ExtResource("2_s30s0")
+
+[node name="3" type="Sprite2D" parent="پرستوها"]
+position = Vector2(434, 461)
+texture = ExtResource("2_s30s0")
+
+[node name="4" type="Sprite2D" parent="پرستوها"]
+position = Vector2(428, 248)
+texture = ExtResource("2_s30s0")
+
+[node name="5" type="Sprite2D" parent="پرستوها"]
+position = Vector2(134, 274)
+texture = ExtResource("2_s30s0")
+
+[node name="چیدمان" type="AnimationPlayer" parent="پرستوها"]
+libraries = {
+&"": SubResource("AnimationLibrary_153y0")
+}
+
+[node name="مهارلمس" parent="." instance=ExtResource("4_tbow4")]
+
+[node name="سر" parent="." instance=ExtResource("4_nyobp")]
+layout_mode = 1
+offset_bottom = 78.0
+
+[node name="شمارش" parent="." instance=ExtResource("5_23eb7")]
+layout_mode = 1
+
+[node name="ایستاده" parent="." instance=ExtResource("6_duvfs")]
+layout_mode = 1
+offset_top = -196.0
+offset_bottom = 196.0
+
+[node name="شمارشگر" type="Timer" parent="."]
+wait_time = 61.0
+one_shot = true
+autostart = true
+
+[node name="آوا" parent="." instance=ExtResource("5_157lj")]
+
+[connection signal="timeout" from="شمارشگر" to="." method="پایان_بازی"]

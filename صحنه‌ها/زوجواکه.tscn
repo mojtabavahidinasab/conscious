@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://brogd6ysmgllk"]
+[gd_scene load_steps=12 format=3 uid="uid://brogd6ysmgllk"]
 
 [ext_resource type="Theme" uid="uid://ckmf8v6was3nc" path="res://سبک‌ها/آفتاب.tres" id="1_ue72h"]
 [ext_resource type="Script" uid="uid://di6lgcp75y5xs" path="res://فردادان/زوجواکه.gd" id="2_nev33"]
@@ -7,18 +7,29 @@
 [ext_resource type="PackedScene" uid="uid://cdmbamtpgxqn3" path="res://صحنه‌ها/شمارش_آغازبازی.tscn" id="5_8xbjk"]
 [ext_resource type="PackedScene" uid="uid://jkpxqgqjbuk7" path="res://صحنه‌ها/آوا.tscn" id="6_mim8t"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7wce7"]
-bg_color = Color(0.172549, 0.172549, 0.172549, 1)
-skew = Vector2(0, 0.15)
-corner_radius_top_left = 256
-corner_detail = 20
+[sub_resource type="Gradient" id="Gradient_uh603"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.423512, 0.314567, 0.288894, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qa6pm"]
-content_margin_bottom = 77.0
-bg_color = Color(0, 0, 1, 1)
-skew = Vector2(0, 0.15)
-corner_radius_bottom_right = 256
-corner_detail = 20
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tnolh"]
+gradient = SubResource("Gradient_uh603")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_jasih"]
+diffuse_texture = SubResource("GradientTexture1D_tnolh")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uh603"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jasih"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
 
 [node name="زوجواکه" type="Control"]
 layout_mode = 3
@@ -30,6 +41,17 @@ grow_vertical = 2
 theme = ExtResource("1_ue72h")
 script = ExtResource("2_nev33")
 
+[node name="پس‌زمینه" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_jasih")
+
 [node name="سر" parent="." instance=ExtResource("3_uh603")]
 layout_mode = 1
 offset_bottom = 83.0
@@ -39,36 +61,111 @@ layout_mode = 1
 offset_top = -197.5
 offset_bottom = 197.5
 
-[node name="تن" type="VBoxContainer" parent="."]
+[node name="تن" type="GridContainer" parent="."]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -25.0
-offset_bottom = 25.0
+offset_top = -228.0
+offset_bottom = 228.0
 grow_horizontal = 2
 grow_vertical = 2
+columns = 2
 
 [node name="زوج" type="Label" parent="تن"]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 40
+size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 128
-theme_override_styles/normal = SubResource("StyleBoxFlat_7wce7")
-text = "A4"
+theme_override_styles/normal = SubResource("StyleBoxFlat_uh603")
+text = "زوج"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="واکه" type="Label" parent="تن"]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 40
+size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 128
-theme_override_styles/normal = SubResource("StyleBoxFlat_qa6pm")
-text = "8D"
+theme_override_styles/normal = SubResource("StyleBoxFlat_jasih")
+text = "واکه"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="فرد" type="Label" parent="تن"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_uh603")
+text = "فرد"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="همخوان" type="Label" parent="تن"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_jasih")
+text = "همخوان"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="راهنما" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 85.0
+offset_bottom = -81.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="بالا" type="HBoxContainer" parent="راهنما"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -306.0
+offset_bottom = -235.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="زوج" type="Label" parent="راهنما/بالا"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "زوج"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="واکه" type="Label" parent="راهنما/بالا"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "واکه (صدادار)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="پایین" type="HBoxContainer" parent="راهنما"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 232.0
+offset_bottom = 303.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="فرد" type="Label" parent="راهنما/پایین"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "فرد"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="همخوان" type="Label" parent="راهنما/پایین"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "همخوان (بی‌صدا)"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -85,16 +182,19 @@ grow_vertical = 0
 [node name="خیر" type="Button" parent="پا"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_mode = 0
 text = "خیر"
 
 [node name="بله" type="Button" parent="پا"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_mode = 0
 text = "بله"
 
 [node name="شمارشگر" type="Timer" parent="."]
-wait_time = 60.0
+wait_time = 61.0
 one_shot = true
+autostart = true
 
 [node name="شمارش" parent="." instance=ExtResource("5_8xbjk")]
 layout_mode = 1
