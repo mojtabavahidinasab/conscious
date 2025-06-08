@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bxw2vtyk64sv0"
-path="res://.godot/imported/AmiriQuran.ttf-b8f83580fbc8be96134b928b14986d90.fontdata"
+uid="uid://be3fsxd0uyh7k"
+path="res://.godot/imported/Amiri-Regular.ttf-e7c03117c02d4b219efda9513b7da282.fontdata"
 
 [deps]
 
-source_file="res://دبیره‌ها/AmiriQuran.ttf"
-dest_files=["res://.godot/imported/AmiriQuran.ttf-b8f83580fbc8be96134b928b14986d90.fontdata"]
+source_file="res://Amiri-Regular.ttf"
+dest_files=["res://.godot/imported/Amiri-Regular.ttf-e7c03117c02d4b219efda9513b7da282.fontdata"]
 
 [params]
 

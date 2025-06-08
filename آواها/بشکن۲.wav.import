@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dic8q2ydkmqam"
-path="res://.godot/imported/بشکن۲.wav-5d18ba48bc9460e363dbba7f71549544.sample"
+path="res://.godot/imported/بشکن۲.wav-7fd763332adf0619036486d6f34f08f3.sample"
 
 [deps]
 
-source_file="res://آواها/دکمه/بشکن۲.wav"
-dest_files=["res://.godot/imported/بشکن۲.wav-5d18ba48bc9460e363dbba7f71549544.sample"]
+source_file="res://آواها/بشکن۲.wav"
+dest_files=["res://.godot/imported/بشکن۲.wav-7fd763332adf0619036486d6f34f08f3.sample"]
 
 [params]
 
