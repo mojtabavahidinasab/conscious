@@ -127,6 +127,12 @@ libraries = {
 layout_mode = 1
 offset_bottom = 78.0
 
+[node name="زمان" parent="سر" index="0"]
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="امتیاز" parent="سر" index="1"]
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
 [node name="شمارش" parent="." instance=ExtResource("5_23eb7")]
 layout_mode = 1
 
@@ -143,3 +149,5 @@ autostart = true
 [node name="آوا" parent="." instance=ExtResource("5_157lj")]
 
 [connection signal="timeout" from="شمارشگر" to="." method="پایان_بازی"]
+
+[editable path="سر"]
