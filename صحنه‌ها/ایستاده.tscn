@@ -33,16 +33,19 @@ vertical_alignment = 1
 [node name="ادامه" type="Button" parent="."]
 layout_mode = 2
 size_flags_vertical = 3
+focus_mode = 0
 text = "ادامه بازی"
 
 [node name="ازنو" type="Button" parent="."]
 layout_mode = 2
 size_flags_vertical = 3
+focus_mode = 0
 text = "باز ازنو بازی ازنو"
 
 [node name="برگردان" type="Button" parent="."]
 layout_mode = 2
 size_flags_vertical = 3
+focus_mode = 0
 text = "بیرون رفتن از بازی"
 
 [node name="آوا" parent="." instance=ExtResource("3_vyke3")]
